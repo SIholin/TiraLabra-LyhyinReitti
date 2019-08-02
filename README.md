@@ -1,6 +1,6 @@
-# tiralabra-LyhyinReitti
+# Labyrintti
 
-Sovelluksen tarkoituksena on, että sen avulla voi etsiä annetun verkon tietystä lähtöpisteesä nopeimman reitin päätepisteeseen eri algoritmien avulla.
+Labyrintti on binääri labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä). Sovelluksen tarkoituksena on löytää lyhyin reitti mahdollisimman nopeasti alusta loppuun, jos tämä on mahdollista.
 
 ## Dokumentaatio
 
