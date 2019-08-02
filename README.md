@@ -6,5 +6,7 @@ Labyrintti on binääri labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulku
 
 [Määrittelydokumentti](https://github.com/SIholin/tiralabra-LyhyinReitti/blob/master/documentation/m%C3%A4%C3%A4rittelydokumentti.md)
 
+[Käyttöohje](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/K%C3%A4ytt%C3%B6ohje.md)
+
 **Viikkoraportit**
 - [Viikkoraportti 1](https://github.com/SIholin/tiralabra-LyhyinReitti/blob/master/documentation/viikkoraportti1.md) 
