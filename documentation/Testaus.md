@@ -13,12 +13,12 @@
 #### Luokka BreadthFirstSearch
 Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean boolean arvon eli "true" sovellus mahdollinen ja "false" sovellus mahdoton labyrntti.
 
-![Bfskattavuus]()
+![Bfskattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Bfskattavuus.png)
 
 #### Luokka Node
 Kyseiselle luokalle ei tarvinnut tehdä erikseen testejä, sillä luokan BreadthFirstSeardch testit testasivat samalla Node luokan, kuten testikattavuusraposrtista näkee.
 
-![Nodekattavuus]()
+![Nodekattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Nodekattavuus.png)
 
 
 
