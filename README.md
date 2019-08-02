@@ -8,5 +8,9 @@ Labyrintti on binääri labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulku
 
 [Käyttöohje](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/K%C3%A4ytt%C3%B6ohje.md)
 
+[Testausdokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md)
+
+[Toteutusdokumentti]
+
 **Viikkoraportit**
 - [Viikkoraportti 1](https://github.com/SIholin/tiralabra-LyhyinReitti/blob/master/documentation/viikkoraportti1.md) 
