@@ -8,13 +8,17 @@
 
 ### Paketti algortihms 
 
+![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testikattavuusbfs.png)
+
 #### Luokka BreadthFirstSearch
 Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean boolean arvon eli "true" sovellus mahdollinen ja "false" sovellus mahdoton labyrntti.
 
-![BfsTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testikattavuusbfs.png)
+![Bfskattavuus]()
 
 #### Luokka Node
-Kyseiselle luokalle ei tarvinnut tehdä erikseen testejä, sillä luokan BreadthFirstSeardch testit testasivat samalla Node luokan, kuten yläpuolella olevasta testikattavuusraposrtista näkee.
+Kyseiselle luokalle ei tarvinnut tehdä erikseen testejä, sillä luokan BreadthFirstSeardch testit testasivat samalla Node luokan, kuten testikattavuusraposrtista näkee.
+
+![Nodekattavuus]()
 
 
 
