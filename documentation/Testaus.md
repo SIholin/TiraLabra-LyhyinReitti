@@ -8,7 +8,7 @@
 
 ### Paketti algortihms 
 
-![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testikattavuusbfs.png)
+![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/TestikattavuusAlko.png)
 
 #### Luokka BreadthFirstSearch
 Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean boolean arvon eli "true" sovellus mahdollinen ja "false" sovellus mahdoton labyrntti.
