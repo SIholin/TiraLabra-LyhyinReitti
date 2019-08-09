@@ -1,6 +1,6 @@
 # Labyrintti
 
-Labyrintti on binääri labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä). Sovelluksen tarkoituksena on löytää lyhyin reitti mahdollisimman nopeasti alusta loppuun, jos tämä on mahdollista.
+Labyrintti on labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä). Sovelluksen tarkoituksena on löytää lyhyin reitti mahdollisimman nopeasti alusta loppuun, jos tämä on mahdollista.
 
 ## Dokumentaatio
 
