@@ -4,9 +4,9 @@ Labyrintti koostuu 0 ja 1 (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä)
 
 ## Dokumentaatio
 
-[Määrittelydokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/m%C3%A4%C3%A4rittelydokumentti.md)
-
 [Käyttöohje](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/K%C3%A4ytt%C3%B6ohje.md)
+
+[Määrittelydokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/M%C3%A4%C3%A4rittelydokumentti.md)
 
 [Testausdokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md)
 
