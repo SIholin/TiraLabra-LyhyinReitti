@@ -11,51 +11,50 @@ import static org.junit.Assert.*;
 public class BFSTest {
 
     BreadthFirstSearch bfs;
+    Maze maze;
+    Maze unsolvableMaze;
+    Maze solvableMaze;
 
     public BFSTest() {
-    }
-
-    @Before
-    public void setUp() {
-
-    }
-
-    @After
-    public void tearDown() {
+        int[][] graph = {
+            {0, 1},
+            {0, 1},};
+        
+        int[][] g = {
+            {1, 0},
+            {0, 1},};
+        
+        int[][] m = {
+            {1, 0},
+            {1, 1},};
+        
+        Coordinate start = new Coordinate(0, 0);
+        Coordinate end = new Coordinate(1, 1);
+        maze = new Maze(graph, 2, 2, start, end);
+        unsolvableMaze = new Maze(g, 2, 2, start, end);
+        solvableMaze = new Maze(m, 2, 2, start, end);
     }
 
     @Test
     public void unsolableCaseOne() {
-        int[][] maze = {
-            {0, 1},
-            {0, 1},
-        };
 
-        bfs = new BreadthFirstSearch(2, 2, maze);
-        assertFalse(bfs.BFS());
+        bfs = new BreadthFirstSearch(maze);
+        assertNull(bfs.solve());
 
     }
-    
+
     @Test
     public void solvable() {
-        int[][] maze = {
-            {1, 1},
-            {0, 1},
-        };
-        
-        bfs = new BreadthFirstSearch(2, 2, maze);
-        assertTrue(bfs.BFS());
-        
+
+        bfs = new BreadthFirstSearch(solvableMaze);
+        assertTrue(bfs.solve().size() == 3);
+
     }
-    
+
     @Test
     public void unscolvableCaseTwo() {
-        int[][] maze = {
-            {1, 0},
-            {0, 1},
-        };
-        
-        bfs = new BreadthFirstSearch(2, 2, maze);
-        assertFalse(bfs.BFS());
+
+        bfs = new BreadthFirstSearch(unsolvableMaze);
+        assertNull(bfs.solve());
     }
 }

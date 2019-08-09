@@ -1,46 +1,17 @@
 package lyhyinreitti.algorithms;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Queue;
+import javafx.util.Pair;
 
 /**
- * Node class helps class named BreadthFirstSearch keeps track of nodes where we
- * have visited and the distance from starting node.
+ * If possible, finds the shortest route through the maze using
+ * breadth first search
  */
-class Node {
+public class BreadthFirstSearch extends Algorithm{
 
-    int x, y, dist;
-
-    /**
-     * Save the information that new Node needs.
-     *
-     * @param x x coordinate
-     * @param y y coordinate
-     * @param dist distance from start
-     */
-    Node(int x, int y, int dist) {
-        this.x = x;
-        this.y = y;
-        this.dist = dist;
-    }
-}
-
-/**
- * If possible find shortest route troughout maze and class uses
- * BreadthFirstSearch
- */
-public class BreadthFirstSearch {
-
-    /**
-     * Size of maze
-     */
-    private int width;
-    private int height;
-
-    /**
-     * Maze giving by user
-     */
-    private int[][] maze;
+    private ArrayList<Pair<Integer, Integer>> solution;
 
     /**
      * Possible movements from a cell (previous, next, up and down)
@@ -50,88 +21,91 @@ public class BreadthFirstSearch {
 
    
     /**
-     * Constructor of class. It get width, height and maze from main class
+     * Constructor of class. It gets width, height and maze from main class
      * 
-     * @param widht number of columns
-     * @param height number of rows
      * @param maze 
      */
-    public BreadthFirstSearch(int widht, int height, int[][] maze) {
-        this.width = widht;
-        this.height = height;
-        this.maze = maze;
+    public BreadthFirstSearch(Maze maze) {
+        super(maze);
 
     }
 
     /**
-     * Do the breadthFirstSearch calculation
+     * Do the breadth first search calculation
      * 
-     * @return true if it is possible solve maze and false if not.
+     * @return true if it is possible solve the maze and false if not.
      */
-    public Boolean BFS() {
+    @Override
+    public ArrayList<Coordinate> solve() {
 
         int i = 0;
         int j = 0;
-        int x = width - 1;
-        int y = height - 1;
+        int x = maze.width - 1;
+        int y = maze.height - 1;
 
-        if (maze[i][j] == 0 || maze[x][y] == 0) {
+        if (maze.graph[i][j] == 0 || maze.graph[x][y] == 0) {
             System.out.println("Labyrintti on mahdoton");
-            return false;
+            return null;
         }
 
-        boolean[][] visited = new boolean[width][height];
-
-        Queue<Node> q = new ArrayDeque<>();
+        boolean[][] visited = new boolean[maze.width][maze.height];
+        ArrayList<Coordinate> path = new ArrayList<>();
+        Queue<Coordinate> q = new ArrayDeque<>();
 
         visited[i][j] = true;
-        q.add(new Node(i, j, 0));
+        Coordinate c = new Coordinate(i, j);
+        c.setDistance(0);
+        q.add(c);
+        path.add(c);
 
-        int min_dist = Integer.MAX_VALUE;
+        int minDist = Integer.MAX_VALUE;
 
         while (!q.isEmpty()) {
-            Node node = q.poll();
+            Coordinate coordinate = q.poll();
 
-            i = node.x;
-            j = node.y;
-            int dist = node.dist;
+            i = coordinate.x;
+            j = coordinate.y;
+            int dist = coordinate.dist;
 
             if (i == x && j == y) {
-                min_dist = dist;
+                minDist = dist;
                 break;
             }
 
             for (int k = 0; k < 4; k++) {
                 if (isPossible(visited, i + row[k], j + col[k])) {
                     visited[i + row[k]][j + col[k]] = true;
-                    q.add(new Node(i + row[k], j + col[k], dist + 1));
+                    Coordinate co = new Coordinate(i + row[k], j + col[k]);
+                    co.setDistance(dist + 1);
+                    q.add(co);
+                    path.add(co);
                 }
             }
         }
 
-        if (min_dist != Integer.MAX_VALUE) {
-            System.out.print("Lyhyimmän reitin pituus on " + min_dist);
-            return true;
+        if (minDist != Integer.MAX_VALUE) {
+            System.out.print("Lyhyimmän reitin siirtymien määrä on " + minDist);
+            return path;
         } else {
             System.out.println("Labyrintti on mahdoton");
-            return false;
+            return null;
         }
 
     }
 
-    //Check is it possible to go maze[row][col]. If it is not possible function 
-    //retruns false else true. It is not possible if it is already visited or 
-    //outside of maze or the value of possible position is 0.
-    /**
+    /** Check is it possible to go maze[row][col]. If it is not possible function 
+    * returns false else true. It is not possible if it is already visited or 
+    * outside of maze or the value of possible position is 0.
      * 
      * @param visited
      * @param r
      * @param c
-     * @return 
+     * @return true if possible and false if not
      */
     private boolean isPossible(boolean visited[][], int r, int c) {
-        return (r >= 0) && (r < width) && (c >= 0) && (c < height)
-                && maze[r][c] == 1 && !visited[r][c];
+        Coordinate coordinate = new Coordinate(r, c);
+        return (r >= 0) && (r < maze.width) && (c >= 0) && (c < maze.height)
+                && maze.at(coordinate) && !visited[r][c];
     }
 
 }
