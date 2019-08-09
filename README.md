@@ -10,7 +10,8 @@ Labyrintti on labyrintti (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä).
 
 [Testausdokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md)
 
-[Toteutusdokumentti]
+[Toteutusdokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Toteutusdokumentti.md)
 
 **Viikkoraportit**
 - [Viikkoraportti 1](https://github.com/SIholin/tiralabra-LyhyinReitti/blob/master/documentation/viikkoraportti1.md) 
+- [Viikkoraportti 2](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Viikkoraportit/Viikkoraportti2.md)
