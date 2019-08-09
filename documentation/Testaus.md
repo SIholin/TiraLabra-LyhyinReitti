@@ -2,24 +2,25 @@
 
 ## Yksikkötestit
 
-![Testikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/ensimm%C3%A4inenKuva.png)
+![Testikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/TestikattavuusKaikki.png)
 
-**Huom! Paketti ui on ilman testejä, koska sillä ei ole varsinaista sovelluslogiikkaa muuten kuin kutsumalla muita paketteja. Yksikkötestit ovat automaattisia Junit yksikkötestejä ja ne voidaan suorittaa sellaisenaan.**
+**Huom! Paketti ui on ilman testejä, koska sillä ei ole varsinaista sovelluslogiikkaa muuten kuin kutsumalla muita paketteja. Yksikkötestit ovat automaattisia Junit yksikkötestejä ja ne voidaan suorittaa sellaisenaan. Kuten yltä huomaa ei testikattavuus ole vielä sadassa prosentissa.**
 
 ### Paketti algortihms 
 
-![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/TestikattavuusAlko.png)
+![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/TestiakattavuusAlko.png)
 
 #### Luokka BreadthFirstSearch
-Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean boolean arvon eli "true" sovellus mahdollinen ja "false" sovellus mahdoton labyrntti.
+Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean kokoisen listan tai null mikäli labyrintti on mahdoton.
 
-![Bfskattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Bfskattavuus.png)
+#### Luokka AStar
+Kyseiselle luokalle riitti myös vain muutama testi.  Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean kokoisen listan tai null mikäli labyrintti on mahdoton.
 
-#### Luokka Node
-Kyseiselle luokalle ei tarvinnut tehdä erikseen testejä, sillä luokan BreadthFirstSeardch testit testasivat samalla Node luokan, kuten testikattavuusraposrtista näkee.
+#### Luokka Coordinate
+Kyseiselle luokalla luotiin usemapi testi. Testeillä varmistetaan että equals metodi palauttaa oikean boolean arvon riippuen siitä onko annettu koordinaatti sama kuin nykyinen koordinaatti. Niillä varmistetaan myös että metodit up, down, right ja left palauttavat oikeat koordinaatit.
 
-![Nodekattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Nodekattavuus.png)
-
+#### Luokat Estimate, Algorithm ja Maze
+Kyseisille luokille ei tarvinnut erikseen luoda testejä, sillä muiden luokkien testit kattavat myös nämä. Toki Maze luokkaan jäi labyrintin tulostus metodit vielä testaamatta.
 
 
 
