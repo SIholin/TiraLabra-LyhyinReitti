@@ -1,6 +1,6 @@
 # Labyrintti
 
-Labyrintti koostuu 0 ja 1 (0 tarkoittaa seinää ja 1 mahdollista kulkureittiä). Sovelluksen tarkoituksena on löytää lyhyin reitti labyrintistä mahdollisimman nopeasti alusta loppuun, jos tämä on mahdollista. Kyseisen reitin löytämiseen käytetään leveyssuuntainenhaku ja A* algoritmejä.
+Labyrintti koostuu 0 ja 1 merkeistä. 0 tarkoittaa seinää ja 1 mahdollista kulkureittiä. Sovelluksen tarkoituksena on löytää lyhyin reitti labyrintistä mahdollisimman nopeasti alusta loppuun, jos tämä on mahdollista. Kyseisen reitin löytämiseen käytetään leveyssuuntainenhaku ja A* algoritmejä.
 
 ## Dokumentaatio
 
