@@ -9,5 +9,5 @@ Käyttäjä antaa ohjelmalle syötteenä labyrintin ja sen koon. Tällä hetkell
 Työssä käytettävien algortimien aikavaativuus riippu pitkälti totetutus tavasta, mutta tarkoituksena on päästä 
 mahdollisiman tehokkaaseen aikavaativuuteen. Leveyssuuntaisenhaun sekä A* algoritmin aikavaativuus on O(n), missä n on solmujen määrä.
 
-** Lähteet: **
+**Lähteet:**
 - https://en.wikipedia.org/wiki/Maze_solving_algorithm 
