@@ -3,8 +3,7 @@ package lyhyinreitti.dataStructures;
 import lyhyinreitti.algorithms.Coordinate;
 
 /**
- *
- * @author ihqsanna
+ * Own version of ArrayList and ArrayDeque
  * @param <C>
  */
 public class MyList<C> {
@@ -17,6 +16,10 @@ public class MyList<C> {
         last = 0;
     }
 
+    /**
+     * 
+     * @param coordinate which is added to list
+     */
     public void add(Coordinate coordinate) {
         if (last == (list.length - 1)) {
             increaseSize();
@@ -24,7 +27,10 @@ public class MyList<C> {
         list[last] = coordinate;
         last++;
     }
-
+    
+    /**
+     * Increases the size of the list
+     */
     public void increaseSize() {
         Coordinate[] newList = new Coordinate[list.length * 2];
 
@@ -34,7 +40,10 @@ public class MyList<C> {
 
         list = newList;
     }
-
+    
+    /**
+     * Print coordinates
+     */
     public void print() {
         for (int i = 0; i < last; i++) {
             Coordinate c = list[i];
@@ -42,10 +51,18 @@ public class MyList<C> {
         }
     }
 
+    /**
+     * Returns how many objects are in array.
+     * @return amount of objects
+     */
     public int size() {
         return last;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public Coordinate poll() {
         Coordinate c = null;
         Coordinate[] newList = new Coordinate[list.length];

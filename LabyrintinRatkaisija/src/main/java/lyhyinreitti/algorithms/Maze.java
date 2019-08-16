@@ -77,7 +77,7 @@ public class Maze {
         }
 
         int split = min + rng.nextInt(max - min + 1);
-        System.out.println("split: " + split);
+       
         if (vertical) { // draw lines
 
             for (int i = ul.y; i <= dr.y; i++) {
@@ -85,7 +85,7 @@ public class Maze {
                 if (cell != 1) {
                     graph[i][split] = 0;
                 }
-                System.out.println(i);
+                
             }
 
             int r = rng.nextInt(dr.y - ul.y + 1) + ul.y;
@@ -93,9 +93,7 @@ public class Maze {
             graph[r][split] = 1;
 
             // make a hole
-            System.out.println("r vertical " + r);
-
-            System.out.println(graph[r][split]);
+           
 
             Coordinate leftbox, rightbox;
             leftbox = new Coordinate(dr.y, split);
@@ -109,16 +107,14 @@ public class Maze {
                 if (cell != 1) {
                     graph[split][i] = 0;
                 }
-                System.out.println(i);
+              
             }
             int r = rng.nextInt(dr.x - ul.x + 1) + ul.x;
 
             graph[split][r] = 1;
 
             // make a hole
-            System.out.println(r + " horizontal r");
-
-            System.out.println("aukko " + graph[split][r]);
+         
             Coordinate downBox, upperBox;
             upperBox = new Coordinate(split, dr.x);
             downBox = new Coordinate(split, ul.x);
