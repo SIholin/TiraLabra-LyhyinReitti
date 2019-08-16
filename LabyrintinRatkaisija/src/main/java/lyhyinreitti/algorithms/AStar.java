@@ -1,7 +1,7 @@
 package lyhyinreitti.algorithms;
 
-import java.util.ArrayList;
 import java.util.PriorityQueue;
+import lyhyinreitti.dataStructures.MyList;
 
 /**
  * Solve the shortest path in the Maze with A* algorithm.
@@ -22,14 +22,16 @@ public class AStar extends Algorithm {
      * @return the path which contains those coordinates which are in the 
      * shortest path or null if it is not possible to solve.
      */
-    public ArrayList<Coordinate> solve() {
+    @Override
+    public MyList<Coordinate> solve() {
         
-        if (maze.graph[maze.start.x][maze.start.y] == 0 || maze.graph[maze.end.x][maze.end.y] == 0) {
+        if (maze.graph[maze.start.y][maze.start.x] == 0 || 
+                maze.graph[maze.end.y][maze.end.x] == 0) {
             System.out.println("Labyrintti on mahdoton");
             return null;
         }
         
-        Coordinate[][] paths = new Coordinate[maze.width][maze.height];
+        Coordinate[][] paths = new Coordinate[maze.height][maze.width];
         PriorityQueue<Estimate> queue = new PriorityQueue();
         queue.add(new Estimate(maze.start, maze.start.distance(maze.end)));
 
@@ -46,8 +48,8 @@ public class AStar extends Algorithm {
             // left
             next = pos.left();
             if (this.isInside(next)) {
-                if (paths[next.x][next.y] == null && maze.at(next)) {
-                    paths[next.x][next.y] = pos;
+                if (paths[next.y][next.x] == null && maze.at(next)) {
+                    paths[next.y][next.x] = pos;
                     queue.add(new Estimate(next, next.distance(maze.end)));
                 }
             }
@@ -55,8 +57,8 @@ public class AStar extends Algorithm {
             // right
             next = pos.right();
             if (this.isInside(next)) {
-                if (paths[next.x][next.y] == null && maze.at(next)) {
-                    paths[next.x][next.y] = pos;
+                if (paths[next.y][next.x] == null && maze.at(next)) {
+                    paths[next.y][next.x] = pos;
                     queue.add(new Estimate(next, next.distance(maze.end)));
                 }
             }
@@ -64,8 +66,8 @@ public class AStar extends Algorithm {
             // up
             next = pos.up();
             if (this.isInside(next)) {
-                if (paths[next.x][next.y] == null && maze.at(next)) {
-                    paths[next.x][next.y] = pos;
+                if (paths[next.y][next.x] == null && maze.at(next)) {
+                    paths[next.y][next.x] = pos;
                     queue.add(new Estimate(next, next.distance(maze.end)));
                 }
 
@@ -74,26 +76,26 @@ public class AStar extends Algorithm {
             // down
             next = pos.down();
             if (this.isInside(next)) {
-                if (paths[next.x][next.y] == null && maze.at(next)) {
-                    paths[next.x][next.y] = pos;
+                if (paths[next.y][next.x] == null && maze.at(next)) {
+                    paths[next.y][next.x] = pos;
                     queue.add(new Estimate(next, next.distance(maze.end)));
                 }
             }
         }
 
-        if (paths[maze.end.x][maze.end.y] == null) {
+        if (paths[maze.end.y][maze.end.x] == null) {
             return null; // no route found
         }
         
         
 
-        Coordinate current = paths[maze.end.x][maze.end.y],
+        Coordinate current = paths[maze.end.y][maze.end.x],
                 start = maze.start;
-        ArrayList<Coordinate> inversePath = new ArrayList();
+        MyList<Coordinate> inversePath = new MyList(10);
         inversePath.add(maze.end);
         while (!current.equals(start)) {
             inversePath.add(current);
-            current = paths[current.x][current.y];
+            current = paths[current.y][current.x];
         } 
         inversePath.add(start);
         return inversePath; // todo reverse

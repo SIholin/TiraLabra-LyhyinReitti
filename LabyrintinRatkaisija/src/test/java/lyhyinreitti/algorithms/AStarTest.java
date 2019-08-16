@@ -9,7 +9,7 @@ public class AStarTest {
     Maze maze;
     Maze unsolvableMaze;
     Maze solvableMaze;
-    Maze unsolvable;
+    Maze solvable;
 
     public AStarTest() {
         int[][] graph = {
@@ -35,7 +35,7 @@ public class AStarTest {
         maze = new Maze(graph, 2, 2, start, end);
         unsolvableMaze = new Maze(g, 2, 2, start, end);
         solvableMaze = new Maze(m, 2, 2, start, end);
-        unsolvable = new Maze(gr, 3, 3, start, e);
+        solvable = new Maze(gr, 3, 3, start, e);
     }
 
     @Test
@@ -62,9 +62,9 @@ public class AStarTest {
     }
 
     @Test
-    public void unscolvableCaseThree() {
+    public void scolvableCaseThree() {
 
-        astar = new AStar(unsolvable);
+        astar = new AStar(solvable);
         assertTrue(astar.solve().size() == 5);
     }
 

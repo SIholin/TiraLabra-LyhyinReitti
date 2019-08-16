@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lyhyinreitti.algorithms;
 
 import java.util.ArrayList;
+import lyhyinreitti.dataStructures.MyList;
 
-/**
- *
- * @author ihqsanna
- */
 public abstract class Algorithm {
     
     final Maze maze;
@@ -19,5 +11,5 @@ public abstract class Algorithm {
         this.maze = maze;
     }
     
-    public abstract ArrayList<Coordinate> solve();
+    public abstract MyList<Coordinate> solve();
 }

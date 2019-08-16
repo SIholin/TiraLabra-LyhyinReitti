@@ -1,5 +1,7 @@
 package lyhyinreitti.algorithms;
 
+import java.util.Random;
+
 /**
  * Contains important information about the maze.
  */
@@ -13,6 +15,7 @@ public class Maze {
 
     /**
      * Constructor of Maze class
+     *
      * @param graph the maze
      * @param width width of the maze
      * @param height height of the maze
@@ -42,24 +45,94 @@ public class Maze {
     public boolean at(Coordinate c) {
         return graph[c.x][c.y] == 1;
     }
+
     
+//    private boolean isInside(Coordinate c) {
+//        return c.x >= 0 && c.x < width && c.y >= 0 && c.y < height;
+//    }
+
     /**
-     * Prints the maze.
+     * Generates random maze
+     *
+     * @param ul upper left cell
+     * @param dr down right cell
      */
-    public void printGraph() {
-        System.out.println("\nAntamasi labyrintti: ");
-        for (int i = 0; i < this.height; i++) {
-            printALineOfStart(i);
-            System.out.println("");
+    public void generate(Coordinate ul, Coordinate dr) {
+        Random rng = new Random();
+        boolean vertical = rng.nextBoolean(); // vertical/horizontal line
+
+        int min, max;
+        if (vertical) {
+            min = ul.x;
+            max = dr.x;
+        } else {
+            min = ul.y; // meneekö oikein päin
+            max = dr.y;
         }
+
+        if ((dr.x - ul.x <= 2) && (dr.y - ul.y <= 2) || min >= max) {
+            graph[0][0] = 1;
+            graph[height -1][width-1] = 1;
+            return;
+        }
+
+        int split = min + rng.nextInt(max - min + 1);
+        System.out.println("split: " + split);
+        if (vertical) { // draw lines
+
+            for (int i = ul.y; i <= dr.y; i++) {
+                int cell = graph[i][split];
+                if (cell != 1) {
+                    graph[i][split] = 0;
+                }
+                System.out.println(i);
+            }
+
+            int r = rng.nextInt(dr.y - ul.y + 1) + ul.y;
+
+            graph[r][split] = 1;
+
+            // make a hole
+            System.out.println("r vertical " + r);
+
+            System.out.println(graph[r][split]);
+
+            Coordinate leftbox, rightbox;
+            leftbox = new Coordinate(dr.y, split);
+            rightbox = new Coordinate(ul.y, split);
+
+            generate(ul, leftbox);
+            generate(rightbox, dr);
+        } else {
+            for (int i = ul.x; i <= dr.x; i++) {
+                int cell = graph[split][i];
+                if (cell != 1) {
+                    graph[split][i] = 0;
+                }
+                System.out.println(i);
+            }
+            int r = rng.nextInt(dr.x - ul.x + 1) + ul.x;
+
+            graph[split][r] = 1;
+
+            // make a hole
+            System.out.println(r + " horizontal r");
+
+            System.out.println("aukko " + graph[split][r]);
+            Coordinate downBox, upperBox;
+            upperBox = new Coordinate(split, dr.x);
+            downBox = new Coordinate(split, ul.x);
+
+            generate(ul, upperBox);
+            generate(downBox, dr);
+
+        }
+
+        // call generate on both sides of the line
     }
 
-    private void printALineOfStart(int i) {
-
-        for (int y = 0; y < this.width; y++) {
-            System.out.print(this.graph[y][i] + " ");
-        }
+    public void setGraph(int[][] graph) {
+        this.graph = graph;
     }
-   
 
 }

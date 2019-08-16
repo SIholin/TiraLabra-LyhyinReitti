@@ -1,11 +1,11 @@
 package lyhyinreitti.ui;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import lyhyinreitti.algorithms.AStar;
 import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.algorithms.Coordinate;
 import lyhyinreitti.algorithms.Maze;
+import lyhyinreitti.dataStructures.MyList;
 
 public class Ui {
 
@@ -17,18 +17,37 @@ public class Ui {
 
         System.out.println("\nAnna labyrintin korkeus kokonaislukuna");
         int height = wrongInputException(reader);
+        
+        System.out.println("\nSyötätkö labyrintin vai annatko sovelluksen "
+                + "generoida sen? 'S' syötä itse ja 'G' ohjelma generoi.");
+       
+        int[][] graph = new int[height][width];
+        
+        int x = width - 1;
+        int y = height - 1;
+        Coordinate start = new Coordinate(0, 0);
+        Coordinate end = new Coordinate(y, x);
+        
+       
 
-        System.out.println("\nAnna labyrintti (0 on seinä ja 1 on mahdollinen kulkusuunta)");
+        Maze maze = new Maze(graph, width, height, start, end);
+          
+        
+        
+        String input = reader.next(); 
+        if(input.equals("S")) {
+            
+            System.out.println("\nAnna labyrintti (0 on seinä ja 1 on mahdollinen kulkusuunta)");
 
-        int[][] graph = new int[width][height];
+        
         for (int r = 0; r < height; r++) {
             for (int c = 0; c < width; c++) {
                 try {
-                    int input = reader.nextInt();
-                    if (input == 0 || input == 1) {
-                        graph[c][r] = input;
+                    int nextInt = reader.nextInt();
+                    if (nextInt == 0 || nextInt == 1) {
+                        graph[r][c] = nextInt;
                     } else {
-                        System.out.println("Syöttämäsi merkki ei ollut 0 tai 1. "
+                        System.out.println("Syöttämäsi luku ei ollut 0 tai 1. "
                                 + "Syötä luku uudestaan.");
                         c--;
                     }
@@ -40,14 +59,17 @@ public class Ui {
                 }
             }
         }
-        int x = width - 1;
-        int y = height - 1;
+        maze.setGraph(graph);
+        } else if(input.equals("G")) {
+            maze.generate(start, end);
+        } else {
+            System.out.println("\nAntamasi merkki ei ollut S tai G. Ohjelma "
+                    + "suljetaan");
+            System.exit(0);
+        }
 
-        Coordinate start = new Coordinate(0, 0);
-        Coordinate end = new Coordinate(x, y);
-
-        Maze maze = new Maze(graph, width, height, start, end);
-        maze.printGraph();
+        
+        printGraph(maze);
 
         System.out.println("\nRatkaistaanko lyhyin reitti leveyssuuntaisella "
                 + "haulla vai A* algoritmillä? 'A' = A* ja 'B' = "
@@ -55,18 +77,26 @@ public class Ui {
         String choice = reader.next();
         if (choice.equals("A")) {
             AStar astar = new AStar(maze);
-            ArrayList<Coordinate> cs = astar.solve();
+            MyList<Coordinate> cs = astar.solve();
             try {
-                System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() -1));
+                System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
+                cs.print();
             } catch (Exception e) {
-                System.out.println("\nLabyrintti mahdotn");
+                System.out.println("\nLabyrintti mahdoton");
             }
         } else if (choice.equals("B")) {
             BreadthFirstSearch bfs = new BreadthFirstSearch(maze);
-            bfs.solve();
+            MyList<Coordinate> cs = bfs.solve();
+            try {
+                System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
+                cs.print();
+            } catch (Exception e) {
+                System.out.println("\nLabyrintti mahdoton");
+            }
         } else {
             System.out.println("\nAntamasi merkki ei ollut A tai B. Ohjelma "
                     + "suljetaan");
+            System.exit(0);
         }
 
     }
@@ -81,6 +111,25 @@ public class Ui {
             System.exit(0);
         };
         return i;
+    }
+    
+        /**
+     * Prints the maze.
+     * @param m Maze which will be printed
+     */
+    public static void printGraph(Maze m) {
+        System.out.println("\nLabyrinttisi: ");
+        for (int i = 0; i < m.height; i++) {
+            printALineOfStart(i, m);
+            System.out.println("");
+        }
+    }
+
+    private static void printALineOfStart(int i, Maze m) {
+
+        for (int y = 0; y < m.width; y++) {
+            System.out.print(m.graph[i][y] + " ");
+        }
     }
 
 }

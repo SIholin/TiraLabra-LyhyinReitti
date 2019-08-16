@@ -61,35 +61,28 @@ public class CoordinateTest {
         assertTrue(coordinate.equals(coordinate));
     }
     
-//    @Test
-//    public void correctDistance() {
-//
-//        Coordinate c = new Coordinate(1, 3);
-//
-//        assertTrue(coordinate.distance(c) == 1);
-//    }
 
     @Test
     public void returnsDown() {
-        Coordinate down = new Coordinate(1, 1);
+        Coordinate down = new Coordinate(0, 2);
         assertTrue(coordinate.down().equals(down));
     }
 
     @Test
     public void returnsUp() {
-        Coordinate up = new Coordinate(1, 3);
+        Coordinate up = new Coordinate(2, 2);
         assertTrue(coordinate.up().equals(up));
     }
     
     @Test
     public void returnsRight(){
-        Coordinate right = new Coordinate(2, 2);
+        Coordinate right = new Coordinate(1, 3);
         assertTrue(coordinate.right().equals(right));
     }
     
     @Test
     public void returnsLeft(){
-        Coordinate left = new Coordinate(0, 2);
+        Coordinate left = new Coordinate(1, 1);
         assertTrue(coordinate.left().equals(left));
     }
     

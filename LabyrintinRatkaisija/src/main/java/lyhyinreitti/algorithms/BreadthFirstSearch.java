@@ -1,17 +1,12 @@
 package lyhyinreitti.algorithms;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Queue;
-import javafx.util.Pair;
+import lyhyinreitti.dataStructures.MyList;
 
 /**
- * If possible, finds the shortest route through the maze using
- * breadth first search
+ * If possible, finds the shortest route through the maze using breadth first
+ * search
  */
-public class BreadthFirstSearch extends Algorithm{
-
-    private ArrayList<Pair<Integer, Integer>> solution;
+public class BreadthFirstSearch extends Algorithm {
 
     /**
      * Possible movements from a cell (previous, next, up and down)
@@ -19,11 +14,10 @@ public class BreadthFirstSearch extends Algorithm{
     private int row[] = {-1, 0, 0, 1};
     private int col[] = {0, -1, 1, 0};
 
-   
     /**
      * Constructor of class. It gets width, height and maze from main class
-     * 
-     * @param maze 
+     *
+     * @param maze
      */
     public BreadthFirstSearch(Maze maze) {
         super(maze);
@@ -32,37 +26,38 @@ public class BreadthFirstSearch extends Algorithm{
 
     /**
      * Do the breadth first search calculation
-     * 
+     *
      * @return true if it is possible solve the maze and false if not.
      */
     @Override
-    public ArrayList<Coordinate> solve() {
+    public MyList<Coordinate> solve() {
 
         int i = 0;
         int j = 0;
         int x = maze.width - 1;
         int y = maze.height - 1;
 
-        if (maze.graph[i][j] == 0 || maze.graph[x][y] == 0) {
+        if (maze.graph[j][i] == 0 || maze.graph[y][x] == 0) {
             System.out.println("Labyrintti on mahdoton");
             return null;
         }
 
-        boolean[][] visited = new boolean[maze.width][maze.height];
-        ArrayList<Coordinate> path = new ArrayList<>();
-        Queue<Coordinate> q = new ArrayDeque<>();
+        Coordinate[][] visited = new Coordinate[maze.height][maze.width];
 
-        visited[i][j] = true;
-        Coordinate c = new Coordinate(i, j);
+        MyList<Coordinate> q = new MyList<>(16);
+
+//        visited[i][j] = true;
+        Coordinate c = new Coordinate(j, i);
         c.setDistance(0);
         q.add(c);
-        path.add(c);
 
         int minDist = Integer.MAX_VALUE;
 
-        while (!q.isEmpty()) {
+        while (true) {
             Coordinate coordinate = q.poll();
-
+            if (coordinate == null) {
+                break;
+            }
             i = coordinate.x;
             j = coordinate.y;
             int dist = coordinate.dist;
@@ -73,39 +68,47 @@ public class BreadthFirstSearch extends Algorithm{
             }
 
             for (int k = 0; k < 4; k++) {
-                if (isPossible(visited, i + row[k], j + col[k])) {
-                    visited[i + row[k]][j + col[k]] = true;
-                    Coordinate co = new Coordinate(i + row[k], j + col[k]);
+                if (isPossible(visited, j + row[k], i + col[k])) {
+                    visited[j + row[k]][i + col[k]] = coordinate;
+                    Coordinate co = new Coordinate(j + row[k], i + col[k]);
                     co.setDistance(dist + 1);
                     q.add(co);
-                    path.add(co);
+
                 }
             }
-        }
 
-        if (minDist != Integer.MAX_VALUE) {
-            System.out.print("Lyhyimmän reitin siirtymien määrä on " + minDist);
-            return path;
-        } else {
-            System.out.println("Labyrintti on mahdoton");
+        }
+        if (visited[maze.end.y][maze.end.x] == null) {
             return null;
         }
 
+        Coordinate current = visited[maze.end.y][maze.end.x],
+                start = maze.start;
+        MyList<Coordinate> inversePath = new MyList(10);
+        inversePath.add(maze.end);
+        while (!current.equals(start)) {
+            inversePath.add(current);
+            current = visited[current.y][current.x];
+        }
+        inversePath.add(start);
+        return inversePath; // todo reverse
+
     }
 
-    /** Check is it possible to go maze[row][col]. If it is not possible function 
-    * returns false else true. It is not possible if it is already visited or 
-    * outside of maze or the value of possible position is 0.
-     * 
+    /**
+     * Check is it possible to go maze[row][col]. If it is not possible function
+     * returns false else true. It is not possible if it is already visited or
+     * outside of maze or the value of possible position is 0.
+     *
      * @param visited
      * @param r
      * @param c
      * @return true if possible and false if not
      */
-    private boolean isPossible(boolean visited[][], int r, int c) {
-        Coordinate coordinate = new Coordinate(r, c);
-        return (r >= 0) && (r < maze.width) && (c >= 0) && (c < maze.height)
-                && maze.at(coordinate) && !visited[r][c];
+    private boolean isPossible(Coordinate visited[][], int row, int col) {
+        Coordinate coordinate = new Coordinate(row, col);
+        return (col >= 0) && (col < maze.width) && (row >= 0) && (row < maze.height)
+                && maze.at(coordinate) && visited[row][col] == null;
     }
 
 }

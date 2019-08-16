@@ -8,7 +8,7 @@ public class Coordinate {
     public final int x, y;
     public int dist;
     
-    public Coordinate(int x, int y) {
+    public Coordinate(int y, int x) {
         this.x = x;
         this.y = y;
         this.dist = -1;
@@ -18,7 +18,7 @@ public class Coordinate {
     * Returns the coordinate that is left side of the current coordinate.
     */
     public Coordinate left(){
-        return new Coordinate(x - 1, y);
+        return new Coordinate(y, x -1);
     }
     
     public void setDistance(int dist) {
@@ -28,21 +28,21 @@ public class Coordinate {
     * Returns the coordinate that is right side of the current coordinate.
     */
     public Coordinate right(){
-        return new Coordinate(x + 1, y);
+        return new Coordinate(y, x + 1);
     }
     
     /**
     * Returns the coordinate above the current coordinate.
     */
     public Coordinate up(){
-        return new Coordinate(x, y + 1);
+        return new Coordinate(y + 1, x);
     }
     
     /**
     * Returns the coordinate below the current coordinate.
     */
     public Coordinate down(){
-        return new Coordinate(x, y - 1);
+        return new Coordinate(y - 1, x);
     }
     
     /**
@@ -53,7 +53,7 @@ public class Coordinate {
      * @return current coordinates heuristic value. 
      */
     public int distance(Coordinate other) {
-        return Math.abs(x - other.x) + Math.abs(y - other.y);
+        return Math.abs(y - other.y) + Math.abs(x - other.x);
     }
     
     /**
