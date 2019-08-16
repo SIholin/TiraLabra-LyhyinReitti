@@ -19,7 +19,7 @@ Kyseiselle luokalle riitti myös vain muutama testi.  Testeillä testattiin mahd
 #### Luokka Coordinate
 Kyseiselle luokalla luotiin usemapi testi. Testeillä varmistetaan että equals metodi palauttaa oikean boolean arvon riippuen siitä onko annettu koordinaatti sama kuin nykyinen koordinaatti. Niillä varmistetaan myös että metodit up, down, right ja left palauttavat oikeat koordinaatit.
 
-### Luokka Maze
+#### Luokka Maze
 Aiempien testien alvulla on testattu suurin osa Maze luokan metodeista, mutta generate metodia ei ollut. Tämän seurauksena luotiin Maze luokalle testi generate metodin toiminnallisuutta testaamaan.
 
 #### Luokat Estimate, Algorithm
@@ -29,5 +29,5 @@ Kyseisille luokille ei tarvinnut erikseen luoda testejä, sillä muiden luokkien
 
 ![DataKattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/DataKattavuus.png)
 
-### Luokka MyList
+#### Luokka MyList
 Kyseiseltä luokalta piti testata add metodia sekä increaseSize metodia, joita ei ole vielä testattu.
