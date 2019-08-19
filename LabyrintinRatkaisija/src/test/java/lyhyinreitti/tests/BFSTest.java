@@ -2,8 +2,8 @@ package lyhyinreitti.tests;
 
 import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.algorithms.BreadthFirstSearch;
-import lyhyinreitti.algorithms.Coordinate;
-import lyhyinreitti.algorithms.Maze;
+import lyhyinreitti.dataStructures.Coordinate;
+import lyhyinreitti.dataStructures.Maze;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

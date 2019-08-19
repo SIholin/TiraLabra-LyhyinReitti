@@ -1,17 +1,15 @@
 package lyhyinreitti.dataStructures;
 
-import lyhyinreitti.algorithms.Coordinate;
-
 /**
  * Own version of ArrayList and ArrayDeque
  * @param <C>
  */
-public class MyList<C> {
+public class Vector<C> {
 
     private Coordinate[] list;
     private int last;
 
-    public MyList(int sizeOfList) {
+    public Vector(int sizeOfList) {
         list = new Coordinate[sizeOfList];
         last = 0;
     }
@@ -60,8 +58,8 @@ public class MyList<C> {
     }
 
     /**
-     * 
-     * @return 
+     *  Deletes head of the queue and returns it.
+     * @return c a Coordinate which is deleted from list
      */
     public Coordinate poll() {
         Coordinate c = null;

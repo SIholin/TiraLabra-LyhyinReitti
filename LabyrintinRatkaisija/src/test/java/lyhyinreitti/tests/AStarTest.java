@@ -1,8 +1,8 @@
 package lyhyinreitti.tests;
 
 import lyhyinreitti.algorithms.AStar;
-import lyhyinreitti.algorithms.Coordinate;
-import lyhyinreitti.algorithms.Maze;
+import lyhyinreitti.dataStructures.Coordinate;
+import lyhyinreitti.dataStructures.Maze;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

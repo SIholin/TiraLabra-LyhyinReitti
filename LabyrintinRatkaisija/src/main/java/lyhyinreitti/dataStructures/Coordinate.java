@@ -1,4 +1,4 @@
-package lyhyinreitti.algorithms;
+package lyhyinreitti.dataStructures;
 
 /**
  * Coordinates of the maze.

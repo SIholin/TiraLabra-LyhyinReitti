@@ -1,8 +1,8 @@
 
 package lyhyinreitti.tests;
 
-import lyhyinreitti.algorithms.Coordinate;
-import lyhyinreitti.dataStructures.MyList;
+import lyhyinreitti.dataStructures.Coordinate;
+import lyhyinreitti.dataStructures.Vector;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,10 +12,10 @@ import static org.junit.Assert.*;
 
 
 public class MyListTest {
-    MyList myList;
+    Vector myList;
     
     public MyListTest() {
-        this.myList = new MyList(1);
+        this.myList = new Vector(1);
     }
     
     @Test

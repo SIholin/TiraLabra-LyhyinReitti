@@ -1,6 +1,8 @@
 package lyhyinreitti.algorithms;
 
-import lyhyinreitti.dataStructures.MyList;
+import lyhyinreitti.dataStructures.Maze;
+import lyhyinreitti.dataStructures.Coordinate;
+import lyhyinreitti.dataStructures.Vector;
 
 /**
  * If possible, finds the shortest route through the maze using breadth first
@@ -30,7 +32,7 @@ public class BreadthFirstSearch extends Algorithm {
      * @return true if it is possible solve the maze and false if not.
      */
     @Override
-    public MyList<Coordinate> solve() {
+    public Vector<Coordinate> solve() {
 
         int i = 0;
         int j = 0;
@@ -44,7 +46,7 @@ public class BreadthFirstSearch extends Algorithm {
 
         Coordinate[][] visited = new Coordinate[maze.height][maze.width];
 
-        MyList<Coordinate> q = new MyList<>(16);
+        Vector<Coordinate> q = new Vector<>(16);
 
 //        visited[i][j] = true;
         Coordinate c = new Coordinate(j, i);
@@ -84,7 +86,7 @@ public class BreadthFirstSearch extends Algorithm {
 
         Coordinate current = visited[maze.end.y][maze.end.x],
                 start = maze.start;
-        MyList<Coordinate> inversePath = new MyList(10);
+        Vector<Coordinate> inversePath = new Vector(10);
         inversePath.add(maze.end);
         while (!current.equals(start)) {
             inversePath.add(current);

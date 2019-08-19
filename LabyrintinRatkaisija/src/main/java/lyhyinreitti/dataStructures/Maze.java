@@ -1,5 +1,6 @@
-package lyhyinreitti.algorithms;
+package lyhyinreitti.dataStructures;
 
+import lyhyinreitti.dataStructures.Coordinate;
 import java.util.Random;
 
 /**
@@ -43,13 +44,22 @@ public class Maze {
      * @return true if coordinate contains 1 and false if not
      */
     public boolean at(Coordinate c) {
-        return graph[c.x][c.y] == 1;
+        return graph[c.y][c.x] == 1;
     }
 
     
 //    private boolean isInside(Coordinate c) {
 //        return c.x >= 0 && c.x < width && c.y >= 0 && c.y < height;
 //    }
+    
+    private boolean isNextVertical(int w, int h) {
+        if(w > h)
+            return true;
+        else if (w < h)
+            return false;
+        else
+            return new Random().nextBoolean();
+    }
 
     /**
      * Generates random maze
@@ -59,76 +69,58 @@ public class Maze {
      */
     public void generate(Coordinate ul, Coordinate dr) {
         Random rng = new Random();
-        boolean vertical = rng.nextBoolean(); // vertical/horizontal line
+        int width = dr.x - ul.x;
+        int height = dr.y - ul.y;
+        
+        boolean vertical = isNextVertical(width, height);
 
         int min, max;
         if (vertical) {
             min = ul.x;
             max = dr.x;
         } else {
-            min = ul.y; // meneekö oikein päin
+            min = ul.y;
             max = dr.y;
         }
 
-        if ((dr.x - ul.x <= 2) && (dr.y - ul.y <= 2) || min >= max) {
-            graph[0][0] = 1;
-            graph[height -1][width-1] = 1;
-            return;
-        }
+        if (max - min < 2) return;
 
-        int split = min + rng.nextInt(max - min + 1);
+        int split = min + 1 + rng.nextInt(max - min - 1); // [min+1, max-1]
        
-        if (vertical) { // draw lines
+        Coordinate box1, box2;
+        if (vertical) {
+            if(height < 2) return;
 
-            for (int i = ul.y; i <= dr.y; i++) {
-                int cell = graph[i][split];
-                if (cell != 1) {
-                    graph[i][split] = 0;
-                }
-                
-            }
+            for (int i = ul.y; i <= dr.y; i++)
+                graph[i][split] = 0;
 
-            int r = rng.nextInt(dr.y - ul.y + 1) + ul.y;
+            int r = ul.y + rng.nextInt(height);
 
             graph[r][split] = 1;
+            graph[r+1][split] = 1;
 
-            // make a hole
-           
-
-            Coordinate leftbox, rightbox;
-            leftbox = new Coordinate(dr.y, split);
-            rightbox = new Coordinate(ul.y, split);
-
-            generate(ul, leftbox);
-            generate(rightbox, dr);
+            box1 = new Coordinate(dr.y, split - 1);
+            box2 = new Coordinate(ul.y, split + 1);
         } else {
-            for (int i = ul.x; i <= dr.x; i++) {
-                int cell = graph[split][i];
-                if (cell != 1) {
-                    graph[split][i] = 0;
-                }
-              
-            }
-            int r = rng.nextInt(dr.x - ul.x + 1) + ul.x;
+            if(width < 2) return;
+            
+            for (int i = ul.x; i <= dr.x; i++) 
+                graph[split][i] = 0;
+            
+            int r = rng.nextInt(width) + ul.x;
 
             graph[split][r] = 1;
+            graph[split][r+1] = 1;
 
-            // make a hole
-         
-            Coordinate downBox, upperBox;
-            upperBox = new Coordinate(split, dr.x);
-            downBox = new Coordinate(split, ul.x);
-
-            generate(ul, upperBox);
-            generate(downBox, dr);
-
+            box1 = new Coordinate(split - 1, dr.x);
+            box2 = new Coordinate(split + 1, ul.x);
         }
 
-        // call generate on both sides of the line
+        generate(ul, box1);
+        generate(box2, dr);
     }
 
     public void setGraph(int[][] graph) {
         this.graph = graph;
     }
-
 }

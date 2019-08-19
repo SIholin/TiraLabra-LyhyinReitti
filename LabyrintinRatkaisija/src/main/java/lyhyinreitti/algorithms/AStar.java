@@ -1,7 +1,10 @@
 package lyhyinreitti.algorithms;
 
+import lyhyinreitti.dataStructures.Maze;
+import lyhyinreitti.dataStructures.Estimate;
+import lyhyinreitti.dataStructures.Coordinate;
 import java.util.PriorityQueue;
-import lyhyinreitti.dataStructures.MyList;
+import lyhyinreitti.dataStructures.Vector;
 
 /**
  * Solve the shortest path in the Maze with A* algorithm.
@@ -23,7 +26,7 @@ public class AStar extends Algorithm {
      * shortest path or null if it is not possible to solve.
      */
     @Override
-    public MyList<Coordinate> solve() {
+    public Vector<Coordinate> solve() {
         
         if (maze.graph[maze.start.y][maze.start.x] == 0 || 
                 maze.graph[maze.end.y][maze.end.x] == 0) {
@@ -91,7 +94,7 @@ public class AStar extends Algorithm {
 
         Coordinate current = paths[maze.end.y][maze.end.x],
                 start = maze.start;
-        MyList<Coordinate> inversePath = new MyList(10);
+        Vector<Coordinate> inversePath = new Vector(10);
         inversePath.add(maze.end);
         while (!current.equals(start)) {
             inversePath.add(current);

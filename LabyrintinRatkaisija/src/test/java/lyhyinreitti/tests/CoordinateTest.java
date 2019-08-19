@@ -1,7 +1,7 @@
 package lyhyinreitti.tests;
 
-import lyhyinreitti.algorithms.Coordinate;
-import lyhyinreitti.algorithms.Coordinate;
+import lyhyinreitti.dataStructures.Coordinate;
+import lyhyinreitti.dataStructures.Coordinate;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
