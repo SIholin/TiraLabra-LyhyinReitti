@@ -17,3 +17,9 @@ Labyrintti koostuu 0 ja 1 merkeistä. 0 tarkoittaa seinää ja 1 mahdollista kul
 - [Viikkoraportti 2](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Viikkoraportit/Viikkoraportti2.md)
 - [Viikkoraportti 3](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Viikkoraportit/Viikkoraportti3.md)
 - [Viikkoraportti 4](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Viikkoraportit/Viikkoraportti4.md)
+
+**Testaus**
+Testikattavuuden saa suorittamalla gradle-projektin juuressa (<code>LabyrintinRatkaisija</code>) antamalla komennon <code>gradle test jacocoTestReport</code>. Generoitu testikattavuus löytyy polusta <code>build/reports/jacoco/test/html/index.html</code>.
+
+**Javadoc**
+Suorittamalla komennon <code>gradle javadoc</code> saa generoitua Javadocin. Tämä löytyy polusta <code>build/docs/javadoc/index.html</code>.
