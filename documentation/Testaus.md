@@ -47,7 +47,7 @@ Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodie
 
 **A***
 
-|Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
+|Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 0.291 | 0.239 | 23.018 |
 | 2 | 0.291 | 0.235 | 22.02  |
@@ -57,7 +57,7 @@ Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodie
 
 **Leveyssuuntainenhaku**
 
-|Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
+|Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 0.303 | 0.269 | 8.547 |
 | 2 | 0.307 | 0.23  | 7.79  |
@@ -70,7 +70,7 @@ Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin me
 
 **A***
 
-|Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
+|Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 4.982 | 4.099 | 18.609 |
 | 2 | 4.912 | 4.092 | 18.172 |
@@ -80,7 +80,7 @@ Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin me
 
 **Levyssuuntianenhaku**
 
-|Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
+|Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 1.729 | 1.246 | 5.39  |
 | 2 | 1.679 | 1.208 | 5.034 |
@@ -92,7 +92,7 @@ Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin me
 Testillä generateTime() testataan labyrintin generointiin kuluvaa aikaa, kun generoitavana on 1000x1000 kokoinen labyrintti.
 Testissä Maze luokan generate() metodia kutsutaan satakertaa ja otetaan aikaa kuinka metodin suoritukseen menee. Tulokset tallennetaan jonoon, jonka jälkeen jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään millisekunnin tarkkuudella.
 
-|Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
+|Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 13.573 | 13.056 | 15.536 |
 | 2 | 13.400 | 13.072 | 14.732 |
