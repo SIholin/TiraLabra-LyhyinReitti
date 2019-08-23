@@ -50,10 +50,14 @@ public class PerformanceTest {
         Arrays.sort(timesAstar);
         printTime(timesAstar[timesAstar.length / 2] / 1000.0 + " mikrosekuntia", "A*",
                 "samanlaisessa");
+        printSmallestAndBiggest(timesAstar[0] / 1000.0 + " mikrosekuntia", 
+                timesAstar[99] / 1000.0 + " mikrosekuntia");
 
         Arrays.sort(timesBFS);
         printTime(timesBFS[timesBFS.length / 2] / 1000.0 + " mikrosekuntia", "leveyssuuntaisenhaku",
                 "samanlaisessa");
+        printSmallestAndBiggest(timesBFS[0] / 1000.0 + " mikrosekuntia", 
+                timesBFS[99] / 1000.0 + " mikrosekuntia");
     }
 
     @Test
@@ -81,10 +85,15 @@ public class PerformanceTest {
         Arrays.sort(timesAstar);
         printTime(timesAstar[timesAstar.length / 2] / 1000.0 + " mikrosekuntia", "A* algoritmin ",
                 "erilaisessa");
+        printSmallestAndBiggest(timesAstar[0] / 1000.0 + " mikrosekuntia",
+                timesAstar[99] / 1000.0 + " mikrosekuntia");
+        
 
         Arrays.sort(timesBFS);
         printTime(timesBFS[timesBFS.length / 2] / 1000.0 + " mikrosekuntia", "leveyssuuntaisenhaku "
                 + "algoritmin ", "erilaisessa");
+        printSmallestAndBiggest(timesBFS[0] / 1000.0 + " mikrosekuntia", 
+                timesBFS[99] / 1000.0 + " mikrosekuntia");
 
     }
 
@@ -108,12 +117,21 @@ public class PerformanceTest {
         printTime(timesGenerate[timesGenerate.length / 2] / 1000000.0 
                 + " millisekuntia", "labyrintin generoinnin ", "erilaisessa");
 
+        printSmallestAndBiggest(timesGenerate[0] / 
+                1000000.0 + " millisekuntia", timesGenerate[99] / 1000000.0
+                + " millisekuntia");
     }
     
-     private void printTime(String millis, String algo, String type) {
+    private void printTime(String millis, String algo, String type) {
         System.out.println("Tällä kertaa " + algo + "suoritusajan mediaani "
                 + "1000x1000 kokoisessa, joka toisto kerralla " + type 
                 + " labyrintissä 100 kertaa toistettuna oli " + millis);
+    }
+    
+    private void printSmallestAndBiggest(String smallest, String biggest) {
+        System.out.println("Pienin kulunut aika " + smallest + " ja suurin "
+                + "kulunut aika " + biggest);
+        System.out.println("");
     }
 
 }
