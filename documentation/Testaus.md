@@ -43,7 +43,7 @@ Kyseistä luokkaa ei ole vielä toteutettu, joten testejä ei ole vielä luotu.
 **Suorituskyky testit on myös tehty junit testeinä, joten ne voi suortittaa yksikkötestien ohessa. Toki ohjelma generoi testejä varten aina uuden labyrintin, joten tulos vaihtelee. Nämä testit löytyvät testipakkauksen luokasta PerformanceTest.**
 
 ### Generoitu labyrintti pysyy samana
-Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
+Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
 
 **A***
 
@@ -66,7 +66,7 @@ Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() 
 | 5 | 0.184 | 0.158 | 5.427 |
 
 ### Generoitu labyrintti vaihtelee
-Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
+Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
 
 **A***
 
@@ -89,7 +89,7 @@ Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() 
 | 5 | 1.663 | 1.228 | 5.024 |
 
 ### Generoidun labyrintin suorituskyky
-Testillä NIMI testataan labyrintin generointiin kuluvaa aikaa, kun generoitavana on 1000x1000 kokoinen labyrintti.
+Testillä generateTime() testataan labyrintin generointiin kuluvaa aikaa, kun generoitavana on 1000x1000 kokoinen labyrintti.
 Testissä Maze luokan generate() metodia kutsutaan satakertaa ja otetaan aikaa kuinka metodin suoritukseen menee. Tulokset tallennetaan jonoon, jonka jälkeen jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään millisekunnin tarkkuudella.
 
 |Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
