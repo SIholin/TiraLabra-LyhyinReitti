@@ -46,6 +46,7 @@ Kyseistä luokkaa ei ole vielä toteutettu, joten testejä ei ole vielä luotu.
 Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
 
 **A***
+
 |Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 0.291 | 0.239 | 23.018 |
@@ -55,6 +56,7 @@ Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() 
 | 5 | 0.177 | 0.166 | 18.628 |
 
 **Leveyssuuntainenhaku**
+
 |Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 0.303 | 0.269 | 8.547 |
@@ -67,6 +69,7 @@ Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() 
 Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
 
 **A***
+
 |Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 4.982 | 4.099 | 18.609 |
@@ -76,6 +79,7 @@ Testillä NIMI testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() 
 | 5 | 5.026 | 3.748 | 17.114 |
 
 **Levyssuuntianenhaku**
+
 |Suorituskerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
 | 1 | 1.729 | 1.246 | 5.39  |
