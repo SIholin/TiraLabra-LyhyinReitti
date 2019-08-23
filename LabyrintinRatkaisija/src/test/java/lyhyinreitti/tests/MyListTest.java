@@ -3,10 +3,6 @@ package lyhyinreitti.tests;
 
 import lyhyinreitti.dataStructures.Coordinate;
 import lyhyinreitti.dataStructures.Vector;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -29,6 +25,13 @@ public class MyListTest {
         
         assertTrue(this.myList.size() == 3);
         
+    }
+    
+    @Test
+    public void getListTest() {
+        this.myList.add(new Coordinate(1, 1));
+        Coordinate[] cs = this.myList.getList();
+        assertTrue(cs[0].equals(new Coordinate(1,1)));
     }
     
   

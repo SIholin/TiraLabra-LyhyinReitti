@@ -3,7 +3,7 @@ package lyhyinreitti.algorithms;
 import lyhyinreitti.dataStructures.Maze;
 import lyhyinreitti.dataStructures.Estimate;
 import lyhyinreitti.dataStructures.Coordinate;
-import java.util.PriorityQueue;
+import lyhyinreitti.dataStructures.MyQueue;
 import lyhyinreitti.dataStructures.Vector;
 
 /**
@@ -30,15 +30,15 @@ public class AStar extends Algorithm {
         
         if (maze.graph[maze.start.y][maze.start.x] == 0 || 
                 maze.graph[maze.end.y][maze.end.x] == 0) {
-            System.out.println("Labyrintti on mahdoton");
+            
             return null;
         }
         
         Coordinate[][] paths = new Coordinate[maze.height][maze.width];
-        PriorityQueue<Estimate> queue = new PriorityQueue();
+        MyQueue<Estimate> queue = new MyQueue(15);
         queue.add(new Estimate(maze.start, maze.start.distance(maze.end)));
 
-        while (!queue.isEmpty()) {
+        while (queue.getLast() > 0) {
             Coordinate pos = queue.poll().coordinate;
 
             if (pos.equals(maze.end)) {

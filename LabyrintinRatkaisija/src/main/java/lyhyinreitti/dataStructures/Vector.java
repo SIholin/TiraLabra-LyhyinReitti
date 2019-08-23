@@ -15,7 +15,7 @@ public class Vector<C> {
     }
 
     /**
-     * 
+     * Adds coordinate to the Coordinate[] list.
      * @param coordinate which is added to list
      */
     public void add(Coordinate coordinate) {
@@ -27,7 +27,7 @@ public class Vector<C> {
     }
     
     /**
-     * Increases the size of the list
+     * Increases the size of the list.
      */
     public void increaseSize() {
         Coordinate[] newList = new Coordinate[list.length * 2];
@@ -38,16 +38,11 @@ public class Vector<C> {
 
         list = newList;
     }
-    
-    /**
-     * Print coordinates
-     */
-    public void print() {
-        for (int i = 0; i < last; i++) {
-            Coordinate c = list[i];
-            System.out.println("(" + c.x + "," + c.y + ")");
-        }
+
+    public Coordinate[] getList() {
+        return list;
     }
+    
 
     /**
      * Returns how many objects are in array.

@@ -40,7 +40,6 @@ public class BreadthFirstSearch extends Algorithm {
         int y = maze.height - 1;
 
         if (maze.graph[j][i] == 0 || maze.graph[y][x] == 0) {
-            System.out.println("Labyrintti on mahdoton");
             return null;
         }
 
@@ -102,9 +101,9 @@ public class BreadthFirstSearch extends Algorithm {
      * returns false else true. It is not possible if it is already visited or
      * outside of maze or the value of possible position is 0.
      *
-     * @param visited
-     * @param r
-     * @param c
+     * @param visited saves coordinates where we have visited.
+     * @param row index
+     * @param col index
      * @return true if possible and false if not
      */
     private boolean isPossible(Coordinate visited[][], int row, int col) {

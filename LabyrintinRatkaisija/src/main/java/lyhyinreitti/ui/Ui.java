@@ -10,6 +10,7 @@ import lyhyinreitti.dataStructures.Vector;
 public class Ui {
 
     public static void main(String[] args) {
+
         Scanner reader = new Scanner(System.in);
 
         System.out.println("Anna labyrintin leveys kokonaislukuna");
@@ -58,9 +59,11 @@ public class Ui {
             }
             maze.setGraph(graph);
         } else if (input.equals("G")) {
-            for(int[] line : graph)
-                for(int i = 0; i < line.length; i++)
+            for (int[] line : graph) {
+                for (int i = 0; i < line.length; i++) {
                     line[i] = 1;
+                }
+            }
             maze.generate(start, end);
         } else {
             System.out.println("\nAntamasi merkki ei ollut S tai G. Ohjelma "
@@ -79,7 +82,7 @@ public class Ui {
             Vector<Coordinate> cs = astar.solve();
             try {
                 System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
-                cs.print();
+                print(cs.size(), cs.getList());
             } catch (Exception e) {
                 System.out.println("\nLabyrintti mahdoton");
             }
@@ -88,7 +91,7 @@ public class Ui {
             Vector<Coordinate> cs = bfs.solve();
             try {
                 System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
-                cs.print();
+                print(cs.size(), cs.getList());
             } catch (Exception e) {
                 System.out.println("\nLabyrintti mahdoton");
             }
@@ -129,6 +132,19 @@ public class Ui {
 
         for (int y = 0; y < m.width; y++) {
             System.out.print(m.graph[i][y] + " ");
+        }
+    }
+
+    /**
+     * Print coordinates.
+     * @param last
+     * @param list
+     */
+    public static void print(int last, Coordinate[] list) {
+        
+        for (int i = 0; i < last; i++) {
+            Coordinate c = list[i];
+            System.out.println("(" + c.x + "," + c.y + ")");
         }
     }
 
