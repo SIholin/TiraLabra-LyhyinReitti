@@ -35,8 +35,16 @@ Aiempien testien alvulla on testattu suurin osa Maze luokan metodeista, mutta ge
 #### Luokka Estimate
 Kyseiseltä luokalta piti testata vertailu metodi, mutta muuten ei tarvinnut luoda uusia testejä, sillä aiemmat testit ovat testanneet luokan muilta osin riittävän hyvin. 
 
-#### Luokka MyRandom
-Kyseistä luokkaa ei ole vielä toteutettu, joten testejä ei ole vielä luotu.
+#### Luokka Random
+Random luokalle tehtiin RandomTest testiluokka, jossa testataan satunnaisia totuusarvoja ja numeroita. Numeroissa satunnainen numero arvotaan väliltä 0-1000. **Huom! Luokka Random luokka ei ole täydellisen satunnainen!**
+
+|Testikerta| Satunnainen numero | Satunnainen totuusarvo |
+|:---:|:---:|:---:|
+| 1 | 349 | false |
+| 2 | 768 | false |
+| 3 | 451 | true  |
+| 4 | 642 | false |
+| 5 | 504 | true  |
 
 ## Suorituskykytestit
 
