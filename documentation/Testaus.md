@@ -51,50 +51,50 @@ Random luokalle tehtiin RandomTest testiluokka, jossa testataan satunnaisia totu
 **Suorituskyky testit on myös tehty junit testeinä, joten ne voi suortittaa yksikkötestien ohessa. Toki ohjelma generoi testejä varten aina uuden labyrintin, joten tulos vaihtelee. Nämä testit löytyvät testipakkauksen luokasta PerformanceTest.**
 
 ### Generoitu labyrintti pysyy samana
-Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
+Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään sekunnin tarkkuudella.
 
 **A***
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.291 | 0.239 | 23.018 |
-| 2 | 0.291 | 0.235 | 22.02  |
-| 3 | 0.191 | 0.169 | 22.96  |
-| 4 | 0.295 | 0.25  | 25.789 |
-| 5 | 0.177 | 0.166 | 18.628 |
+| 1 | 0.212 | 0.173 | 0.486 |
+| 2 | 0.236 | 0.210 | 0.420 |
+| 3 | 0.030 | 0.026 | 0.202 |
+| 4 | 0.181 | 0.171 | 0.376 |
+| 5 | 0.188 | 0.174 | 0.385 |
 
 **Leveyssuuntainenhaku**
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.303 | 0.269 | 8.547 |
-| 2 | 0.307 | 0.23  | 7.79  |
-| 3 | 0.208 | 0.181 | 6.061 |
-| 4 | 0.324 | 0.268 | 7.436 |
-| 5 | 0.184 | 0.158 | 5.427 |
+| 1 | 0.196 | 0.169 | 0.348 |
+| 2 | 0.225 | 0.203 | 0.393 |
+| 3 | 0.027 | 0.024 | 0.138 |
+| 4 | 0.181 | 0.168 | 0.234 |
+| 5 | 0.180 | 0.169 | 0.277 |
 
 ### Generoitu labyrintti vaihtelee
-Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään mikrosekunnin tarkkuudella.
+Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään sekunnin tarkkuudella.
 
 **A***
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 4.982 | 4.099 | 18.609 |
-| 2 | 4.912 | 4.092 | 18.172 |
-| 3 | 5.025 | 2.628 | 18.12  |
-| 4 | 5.06  | 2.546 | 17.263 |
-| 5 | 5.026 | 3.748 | 17.114 |
+| 1 | 0.233 | 0.048 | 0.447 |
+| 2 | 0.203 | 0.069 | 0.327 |
+| 3 | 0.199 | 0.038 | 0.380 |
+| 4 | 0.193 | 0.045 | 0.308 |
+| 5 | 0.186 | 0.045 | 0.322 |
 
 **Levyssuuntianenhaku**
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 1.729 | 1.246 | 5.39  |
-| 2 | 1.679 | 1.208 | 5.034 |
-| 3 | 1.573 | 1.061 | 4.856 |
-| 4 | 1.541 | 0.987 | 5.543 |
-| 5 | 1.663 | 1.228 | 5.024 |
+| 1 | 0.201 | 0.037 | 0.406 |
+| 2 | 0.193 | 0.051 | 0.327 |
+| 3 | 0.189 | 0.037 | 0.391 |
+| 4 | 0.187 | 0.033 | 0.295 |
+| 5 | 0.171 | 0.032 | 0.295 |
 
 ### Generoidun labyrintin suorituskyky
 Testillä generateTime() testataan labyrintin generointiin kuluvaa aikaa, kun generoitavana on 1000x1000 kokoinen labyrintti.
@@ -107,4 +107,16 @@ Testissä Maze luokan generate() metodia kutsutaan satakertaa ja otetaan aikaa k
 | 3 | 13.894 | 13.129 | 18.542 |
 | 4 | 13.685 | 13.103 | 20.539 |
 | 5 | 14.075 | 13.409 | 20.637 |
+
+### A* keon maksimikoko ja solmuvierailuiden määrä
+Testeillä maximSizeOfQueueAStar ja visitedCellsAStar testataan A* algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. 
+Labyrintin koko on 1000x1000.
+
+|Testikerta| Keon maksimikoko | Solmuvierailut |
+|:---:|:---:|:---:|
+| 1 | 241 | 2444700 |
+| 2 | 189 | 2502055 |
+| 3 | 229 | 1585047 |
+| 4 | 307 | 925424  |
+| 5 | 153 | 2536011 |
 
