@@ -1,8 +1,5 @@
 package lyhyinreitti.dataStructures;
 
-import lyhyinreitti.dataStructures.Coordinate;
-import java.util.Random;
-
 /**
  * Contains important information about the maze.
  */
@@ -46,19 +43,21 @@ public class Maze {
     public boolean at(Coordinate c) {
         return graph[c.y][c.x] == 1;
     }
-
     
-//    private boolean isInside(Coordinate c) {
-//        return c.x >= 0 && c.x < width && c.y >= 0 && c.y < height;
-//    }
-    
+    /**
+     * Checks if next line will be vertical or horizontal.
+     * 
+     * @param w sectors width
+     * @param h sectors height
+     * @return true if next line will be vertical and false if horizontal
+     */
     private boolean isNextVertical(int w, int h) {
         if(w > h)
             return true;
         else if (w < h)
             return false;
         else
-            return new Random().nextBoolean();
+            return new Random(System.nanoTime(), System.identityHashCode(Maze.class)).getRandomBoolean();
     }
 
     /**
@@ -68,7 +67,7 @@ public class Maze {
      * @param dr down right cell
      */
     public void generate(Coordinate ul, Coordinate dr) {
-        Random rng = new Random();
+        Random rng = new Random(System.nanoTime(), System.identityHashCode(Maze.class));
         int width = dr.x - ul.x;
         int height = dr.y - ul.y;
         
@@ -85,7 +84,7 @@ public class Maze {
 
         if (max - min < 2) return;
 
-        int split = min + 1 + rng.nextInt(max - min - 1); // [min+1, max-1]
+        int split = min + 1 + rng.getRandomInt(max - min - 1); // [min+1, max-1]
        
         Coordinate box1, box2;
         if (vertical) {
@@ -94,7 +93,7 @@ public class Maze {
             for (int i = ul.y; i <= dr.y; i++)
                 graph[i][split] = 0;
 
-            int r = ul.y + rng.nextInt(height);
+            int r = ul.y + rng.getRandomInt(height);
 
             graph[r][split] = 1;
             graph[r+1][split] = 1;
@@ -107,7 +106,7 @@ public class Maze {
             for (int i = ul.x; i <= dr.x; i++) 
                 graph[split][i] = 0;
             
-            int r = rng.nextInt(width) + ul.x;
+            int r = rng.getRandomInt(width) + ul.x;
 
             graph[split][r] = 1;
             graph[split][r+1] = 1;

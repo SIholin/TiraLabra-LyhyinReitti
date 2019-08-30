@@ -8,7 +8,7 @@ import lyhyinreitti.dataStructures.Vector;
  * If possible, finds the shortest route through the maze using breadth first
  * search
  */
-public class BreadthFirstSearch extends Algorithm {
+public class BreadthFirstSearch extends Algorithm{
 
     /**
      * Possible movements from a cell (previous, next, up and down)
@@ -31,7 +31,6 @@ public class BreadthFirstSearch extends Algorithm {
      *
      * @return true if it is possible solve the maze and false if not.
      */
-    @Override
     public Vector<Coordinate> solve() {
 
         int i = 0;

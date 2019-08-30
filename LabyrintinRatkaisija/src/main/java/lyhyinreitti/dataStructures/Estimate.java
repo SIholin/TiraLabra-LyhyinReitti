@@ -1,7 +1,5 @@
 package lyhyinreitti.dataStructures;
 
-import lyhyinreitti.dataStructures.Coordinate;
-
 /**
  * Helps A* compare which coordinate has lowest estimate 
  */

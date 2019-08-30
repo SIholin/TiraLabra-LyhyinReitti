@@ -137,11 +137,12 @@ public class Ui {
 
     /**
      * Print coordinates.
+     *
      * @param last
      * @param list
      */
     public static void print(int last, Coordinate[] list) {
-        
+
         for (int i = 0; i < last; i++) {
             Coordinate c = list[i];
             System.out.println("(" + c.x + "," + c.y + ")");
