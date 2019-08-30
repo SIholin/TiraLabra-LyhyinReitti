@@ -22,11 +22,11 @@ Levyessuuntainenhaku ja A* algoritmeillä sekä labyrintin generoinnilla on kaik
 
 ## Suorituskyky- ja O-analyysivertaiu
 
-[Testidokumenttia](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md) katsoessa huomaa suuriakin eroja A* ja leveyssuntianenhaku algoritmien suorituskyvyssä. 
+[Testidokumenttia](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md) katsoessa huomaa suuriakin eroja A* ja leveyssuntianenhaku algoritmien suorituskyvyssä.  **HUOM! AStar algoritmille on tehty muutuja joka tarkkailee keon maksimikokoa ja muuttuja joka pitää kirjaa käytyjen solmujen määrästä. Tämä hidastaa AStar algortimia.** 
 
-Kun labyrintti pysyy saman niin A* algortimillä on jokaisella testikerralla ollut parempi mediaani arvo. Myös pienin kulunut aika kierroksilla on lähes tulkoon aina ollut A* algortimillä. Yllättävää kuitenkin huomata että Suurin kulunut aika on joka kerta myös ollut A* ja se on vielä selkeästi suurempi (noin 3 kertaa) kuin leveyssuuntaisella haulla.
+Kun labyrintti pysyy saman niin leveyssuuntaisellahaku algortimillä on jokaisella testikerralla ollut parempi mediaani arvo. Myös pienin kulunut aika kierroksilla on aina ollut leveyssuuntaisellahaku algortimillä. Suurin kulunut aika on joka kerta ollut A* algoritmillä.
 
-Kun labyrintti muuttuu aina kun kuumallakin algoritmillä on kerran kutsuttu solve() metodia niin tulos on varsin erilainen. A* algoritmi on selvästi hävinnyt leveyssuuntaisellehaku algoritmille. A* algortimin mediaani on noin neljä kertaa suurempi ja suurin kulunut aika on edelleen selvästi suurempi.
+Kun labyrintti muuttuu aina kun kuumallakin algoritmillä on kerran kutsuttu solve() metodia niin tulos pysyy suhteellisen samana. A* algoritmi häviää leveyssuuntaisellehaku algoritmille. A* algortimin mediaani on joka kerta isompi samoin kuin pienin kulunut aika. Myös suurin kulunut aika on A* algortimillä suurempi.
 
 Labyrintin generoinnin suorituskyvyn mediaani on testikerrasta riippumatta suunnilleen aina samaa luokkaa. Pienin kulunut aika myös pysyy suhteellisen samana jokaisella testikerralla, mutta suurin kulunut aika on vaihdellut melko rajusti jopa 5 millisekunnin eroja ilmenee.
 
