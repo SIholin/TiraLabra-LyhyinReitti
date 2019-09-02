@@ -8,7 +8,7 @@
 
 ### Paketti algortihms 
 
-![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/AlkoKattavuus.png)
+![AlkoTestikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/AlgoKattavuus.png)
 
 #### Luokka BreadthFirstSearch
 Kyseiselle luokalle riitti vain muutama testi. Testeillä testattiin mahdollisia ja mahdottomia labyrinttejä ja katsottiin palauttaako testit tästä oikean kokoisen listan tai null mikäli labyrintti on mahdoton.
@@ -21,7 +21,7 @@ Kyseiselle abstraktille luokalle ei tarvinnut erikseen luoda testejä.
 
 ### Paketti dataStructures
 
-![DataKattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/DatastructureKattavuus.png)
+![DataKattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/DataKattavuus.png)
 
 #### Luokat Vector ja MyQueue
 Kyseisiltä luokilta piti testata add metodia sekä increaseSize metodia. Muilta osin luokat on tullut testattua muiden testien ohessa.
