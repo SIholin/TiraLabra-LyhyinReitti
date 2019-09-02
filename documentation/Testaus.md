@@ -57,21 +57,21 @@ Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodie
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.212 | 0.173 | 0.486 |
-| 2 | 0.236 | 0.210 | 0.420 |
-| 3 | 0.030 | 0.026 | 0.202 |
-| 4 | 0.181 | 0.171 | 0.376 |
-| 5 | 0.188 | 0.174 | 0.385 |
+| 1 | 0.425 | 0.350 | 1.133 |
+| 2 | 0.175 | 0.157 | 0.512 |
+| 3 | 0.145 | 0.120 | 0.357 |
+| 4 | 0.164 | 0.147 | 0.503 |
+| 5 | 0.165 | 0.149 | 0.319 |
 
 **Leveyssuuntainenhaku**
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.196 | 0.169 | 0.348 |
-| 2 | 0.225 | 0.203 | 0.393 |
-| 3 | 0.027 | 0.024 | 0.138 |
-| 4 | 0.181 | 0.168 | 0.234 |
-| 5 | 0.180 | 0.169 | 0.277 |
+| 1 | 0.392 | 0.337 | 0.677 |
+| 2 | 0.161 | 0.139 | 0.268 |
+| 3 | 0.137 | 0.117 | 0.218 |
+| 4 | 0.149 | 0.132 | 0.258 |
+| 5 | 0.160 | 0.136 | 0.306 |
 
 ### Generoitu labyrintti vaihtelee
 Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti vaihtuu aina sen jälkeen kun kummalakin algoritmillä on kerran kutsuttu solve(). Labyrintin koko pysyy kuitenkin samana koko testin ajan ja on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään sekunnin tarkkuudella.
@@ -80,21 +80,21 @@ Testillä differentMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin me
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.233 | 0.048 | 0.447 |
-| 2 | 0.203 | 0.069 | 0.327 |
-| 3 | 0.199 | 0.038 | 0.380 |
-| 4 | 0.193 | 0.045 | 0.308 |
-| 5 | 0.186 | 0.045 | 0.322 |
+| 1 | 0.370 | 0.061 | 0.622 |
+| 2 | 0.411 | 0.117 | 0.859 |
+| 3 | 0.214 | 0.079 | 0.404 |
+| 4 | 0.215 | 0.048 | 0.324 |
+| 5 | 0.198 | 0.064 | 0.345 |
 
 **Levyssuuntianenhaku**
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 0.201 | 0.037 | 0.406 |
-| 2 | 0.193 | 0.051 | 0.327 |
-| 3 | 0.189 | 0.037 | 0.391 |
-| 4 | 0.187 | 0.033 | 0.295 |
-| 5 | 0.171 | 0.032 | 0.295 |
+| 1 | 0.341 | 0.059 | 0.626 |
+| 2 | 0.372 | 0.114 | 0.618 |
+| 3 | 0.204 | 0.067 | 0.346 |
+| 4 | 0.195 | 0.041 | 0.387 |
+| 5 | 0.192 | 0.061 | 0.315 |
 
 ### Generoidun labyrintin suorituskyky
 Testillä generateTime() testataan labyrintin generointiin kuluvaa aikaa, kun generoitavana on 1000x1000 kokoinen labyrintti.
@@ -102,15 +102,14 @@ Testissä Maze luokan generate() metodia kutsutaan satakertaa ja otetaan aikaa k
 
 |Testikerta| Aikojen mediaani | Pienin kulunut aika  | Suurin kulunut aika |
 |:---:|:---:|:---:|:---:|
-| 1 | 13.573 | 13.056 | 15.536 |
-| 2 | 13.400 | 13.072 | 14.732 |
-| 3 | 13.894 | 13.129 | 18.542 |
-| 4 | 13.685 | 13.103 | 20.539 |
-| 5 | 14.075 | 13.409 | 20.637 |
+| 1 | 17.602 | 12.665 | 38.330 |
+| 2 | 18.394 | 12.604 | 37.549 |
+| 3 | 11.899 | 11.588 | 24.778 |
+| 4 | 11.677 | 11.384 | 30.486 |
+| 5 | 11.921 | 11.612 | 20.231 |
 
-### A* keon maksimikoko ja solmuvierailuiden määrä
-Testeillä maximSizeOfQueueAStar ja visitedCellsAStar testataan A* algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. 
-Labyrintin koko on 1000x1000.
+### A* algoritmin keon maksimikoko ja solmuvierailuiden määrä
+Testeillä maximSizeOfQueueAStar ja visitedCellsAStar testataan A* algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. Labyrintin koko on 1000x1000.
 
 |Testikerta| Keon maksimikoko | Solmuvierailut |
 |:---:|:---:|:---:|
@@ -119,4 +118,18 @@ Labyrintin koko on 1000x1000.
 | 3 | 229 | 1585047 |
 | 4 | 307 | 925424  |
 | 5 | 153 | 2536011 |
+
+
+### Leveyssuuntaisenhaku algoritmin keon maksimikoko ja solmuvierailuiden määrä
+Testeillä maximSizeOfQueueBFS ja visitedCellsBFS testataan leveyssuuntaisenhaku algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. Labyrintin koko on 1000x1000.
+
+|Testikerta| Keon maksimikoko | Solmuvierailut |
+|:---:|:---:|:---:|
+| 1 | 206 | 587940 |
+| 2 | 287 | 627757 |
+| 3 | 139 | 601204 |
+| 4 | 291 | 511244 |
+| 5 | 183 | 626295 |
+
+
 
