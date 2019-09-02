@@ -10,6 +10,8 @@ import lyhyinreitti.dataStructures.Vector;
  */
 public class BreadthFirstSearch extends Algorithm{
 
+    private int maxSize;
+    private int visits;
     /**
      * Possible movements from a cell (previous, next, up and down)
      */
@@ -23,6 +25,8 @@ public class BreadthFirstSearch extends Algorithm{
      */
     public BreadthFirstSearch(Maze maze) {
         super(maze);
+        maxSize = -1;
+        visits = -1;
 
     }
 
@@ -45,8 +49,9 @@ public class BreadthFirstSearch extends Algorithm{
         Coordinate[][] visited = new Coordinate[maze.height][maze.width];
 
         Vector<Coordinate> q = new Vector<>(16);
+        maxSize = 1;
+        visits = 1;
 
-//        visited[i][j] = true;
         Coordinate c = new Coordinate(j, i);
         c.setDistance(0);
         q.add(c);
@@ -69,12 +74,17 @@ public class BreadthFirstSearch extends Algorithm{
 
             for (int k = 0; k < 4; k++) {
                 if (isPossible(visited, j + row[k], i + col[k])) {
+                    visits ++;
                     visited[j + row[k]][i + col[k]] = coordinate;
                     Coordinate co = new Coordinate(j + row[k], i + col[k]);
                     co.setDistance(dist + 1);
                     q.add(co);
 
                 }
+            }
+            int size = q.size();
+            if (size > maxSize) {
+                maxSize = size;
             }
 
         }
@@ -109,6 +119,14 @@ public class BreadthFirstSearch extends Algorithm{
         Coordinate coordinate = new Coordinate(row, col);
         return (col >= 0) && (col < maze.width) && (row >= 0) && (row < maze.height)
                 && maze.at(coordinate) && visited[row][col] == null;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public int getVisits() {
+        return visits;
     }
 
 }
