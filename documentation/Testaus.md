@@ -108,28 +108,28 @@ Testissä Maze luokan generate() metodia kutsutaan satakertaa ja otetaan aikaa k
 | 4 | 11.677 | 11.384 | 30.486 |
 | 5 | 11.921 | 11.612 | 20.231 |
 
-### A* algoritmin keon maksimikoko ja solmuvierailuiden määrä
-Testeillä maximSizeOfQueueAStar ja visitedCellsAStar testataan A* algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. Labyrintin koko on 1000x1000.
+### A* ja leveyssuuntaisenhaku algoritmin keon maksimikoko
+Testillä maximSizeOfQueue testataan A* ja leveyssuuntaisenhaku algoritmin keon maksimi suuruutta suorituksen aikana. Labyrintin koko on 1000x1000.
 
-|Testikerta| Keon maksimikoko | Solmuvierailut |
+|Testikerta| A* | Leveyssuuntainenhaku |
 |:---:|:---:|:---:|
-| 1 | 241 | 2444700 |
-| 2 | 189 | 2502055 |
-| 3 | 229 | 1585047 |
-| 4 | 307 | 925424  |
-| 5 | 153 | 2536011 |
+| 1 | 213 | 211 |
+| 2 | 227 | 223 |
+| 3 | 266 | 264 |
+| 4 | 308 | 307 |
+| 5 | 220 | 218 |
 
 
-### Leveyssuuntaisenhaku algoritmin keon maksimikoko ja solmuvierailuiden määrä
-Testeillä maximSizeOfQueueBFS ja visitedCellsBFS testataan leveyssuuntaisenhaku algoritmin keon maksimi suuruutta sekä solmujen määrää, jossa on vierailtu suorituksen aikana. Labyrintin koko on 1000x1000.
+### A* ja leveyssuuntaisenhaku algoritmin solmuvierailuiden määrä
+Testillä visitedCells testataan A* ja leveyssuuntaisenhaku algoritmin solmujen määrää, jossa on vierailtu suorituksen aikana. Labyrintin koko on 1000x1000.
 
-|Testikerta| Keon maksimikoko | Solmuvierailut |
+|Testikerta| A* | Leveyssuuntainenhaku |
 |:---:|:---:|:---:|
-| 1 | 206 | 587940 |
-| 2 | 287 | 627757 |
-| 3 | 139 | 601204 |
-| 4 | 291 | 511244 |
-| 5 | 183 | 626295 |
+| 1 | 2448075 | 612882 |
+| 2 | 2544810 | 636994 |
+| 3 | 2430870 | 608452 |
+| 4 | 2155843 | 539816 |
+| 5 | 2501427 | 626149 |
 
 
 
