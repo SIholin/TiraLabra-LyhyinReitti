@@ -4,7 +4,7 @@
 
 ![Testikattavuus](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Kuvat/KaikkiKattavuus.png)
 
-**Huom! Paketti ui on ilman testejä, koska sillä ei ole varsinaista sovelluslogiikkaa muuten kuin kutsumalla muita paketteja. Yksikkötestit ovat automaattisia Junit yksikkötestejä ja ne voidaan suorittaa sellaisenaan.**
+**Huom! Paketti ui on ilman testejä, koska sillä ei ole varsinaista sovelluslogiikkaa muuten kuin kutsumalla muita paketteja. Yksikkötestit ovat automaattisia Junit yksikkötestejä ja ne voidaan suorittaa sellaisenaan. Myös paketti performance on ilman testejä, koska se pitää sisällään vain PerformanceTest luokan, joka huolehtii sovelluksen suorituskykytestauksesta!**
 
 ### Paketti algortihms 
 
@@ -48,7 +48,7 @@ Random luokalle tehtiin RandomTest testiluokka, jossa testataan satunnaisia totu
 
 ## Suorituskykytestit
 
-**Suorituskyky testit on myös tehty junit testeinä, joten ne voi suortittaa yksikkötestien ohessa. Toki ohjelma generoi testejä varten aina uuden labyrintin, joten tulos vaihtelee. Nämä testit löytyvät testipakkauksen luokasta PerformanceTest.**
+**Suorituskyky testit on mahdollista toteuttaa ohjelmansuorituksen aikana niin halutessaan. Toki ohjelma generoi testejä varten aina uuden labyrintin, joten tulos vaihtelee. Nämä testit löytyvät performance pakkauksen luokasta PerformanceTest. Kyseiselle luokalle ei ole tehty lisäksi omia testejä.**
 
 ### Generoitu labyrintti pysyy samana
 Testillä sameMazeTime() testataan A* ja leveyssuuntaisenhaku algoritmin metodien solve() toimintaa niin että generoitu labyrintti pysyy samana koko testauksen ajan. Labyrintin koko testin aikana on 1000x1000. Testissä kummankin algoritmin solve() metodia kutsutaan satakertaa ja otetaa aikaa kuinka kauan metodin suoritukseen menee. Kummankin algoritmin tulokset tallennetaan omiin jonoihin, jonka jälkeen kummastakin jonosta etsitään mediaani ja tämä kerrotaan käyttäjälle. Tulokset esitetään sekunnin tarkkuudella.
