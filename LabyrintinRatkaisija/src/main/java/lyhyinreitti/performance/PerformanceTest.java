@@ -1,11 +1,10 @@
-package lyhyinreitti.tests.performance;
+package lyhyinreitti.performance;
 
 import java.util.Arrays;
 import lyhyinreitti.algorithms.AStar;
 import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.dataStructures.Coordinate;
 import lyhyinreitti.dataStructures.Maze;
-import org.junit.Test;
 
 public class PerformanceTest {
 
@@ -27,7 +26,6 @@ public class PerformanceTest {
         bfs = new BreadthFirstSearch(maze);
     }
 
-    @Test
     public void sameMazeTime() {
         int runTimes = 100;
         long[] timesAstar = new long[runTimes];
@@ -63,7 +61,6 @@ public class PerformanceTest {
                 timesBFS[99] / 1000000000.0 + " sekuntia");
     }
 
-    @Test
     public void differentMazeTime() {
         int runTimes = 100;
         long[] timesAstar = new long[runTimes];
@@ -101,7 +98,6 @@ public class PerformanceTest {
 
     }
 
-    @Test
     public void generateTime() {
         int runTimes = 100;
         long[] timesGenerate = new long[runTimes];
@@ -137,7 +133,7 @@ public class PerformanceTest {
     }
 
     private void printTime(String millis, String algo, String type) {
-        System.out.println("Tällä kertaa " + algo + "suoritusajan mediaani "
+        System.out.println("\nTällä kertaa " + algo + "suoritusajan mediaani "
                 + "1000x1000 kokoisessa, joka toisto kerralla " + type
                 + " labyrintissä 100 kertaa toistettuna oli " + millis);
     }
@@ -145,41 +141,32 @@ public class PerformanceTest {
     private void printSmallestAndBiggest(String smallest, String biggest) {
         System.out.println("Pienin kulunut aika " + smallest + " ja suurin "
                 + "kulunut aika " + biggest);
-        System.out.println("");
     }
 
-    @Test
     public void maximSizeOfQueue() {
         formatGraph();
         this.maze.setGraph(graph);
         this.maze.generate(begin, end);
 
         astar.solve();
+        bfs.solve();
 
-        System.out.println("Tällä kertaa A* algortimin maksimi määrä keossa "
-                + "saman aikaisesti oli " + astar.getMaxSize());
-        System.out.println("");
-         bfs.solve();
-
-        System.out.println("Tällä kertaa leveyssuuntainenhaku algortimin maksimi määrä keossa "
-                + "saman aikaisesti oli " + bfs.getMaxSize());
-        System.out.println("");
+        System.out.println("\nTällä kertaa A* algortimin maksimi määrä keossa "
+                + "saman aikaisesti oli " + astar.getMaxSize() + " ja "
+                + "leveyssuuntainenhaku algoritmin maksimi määrä oli "
+                + bfs.getMaxSize());
     }
 
-    @Test
     public void visitedCells() {
         formatGraph();
         this.maze.setGraph(graph);
         this.maze.generate(begin, end);
         astar.solve();
+        bfs.solve();
 
-        System.out.println("Tällä kertaa A* algortimin suorituksen aikana "
-                + "vierailtiin " + astar.getVisited() + " solmussa.");
-        System.out.println("");
-            bfs.solve();
-
-        System.out.println("Tällä kertaa leveyssuuntainenhaku algortimin suorituksen aikana "
-                + "vierailtiin " + bfs.getVisits() + " solmussa.");
-        System.out.println("");
+        System.out.println("\nTällä kertaa A* algortimin suorituksen aikana "
+                + "vierailtiin " + astar.getVisited() + " solmussa ja "
+                + "leveyssuuntainenhaku algortimin suorituksen aikana " +
+                bfs.getVisits() + " solmussa");
     }
 }

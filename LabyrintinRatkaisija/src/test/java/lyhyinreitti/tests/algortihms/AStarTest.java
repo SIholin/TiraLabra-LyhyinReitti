@@ -39,6 +39,7 @@ public class AStarTest {
         unsolvableMaze = new Maze(g, 2, 2, start, end);
         solvableMaze = new Maze(m, 2, 2, start, end);
         solvable = new Maze(gr, 3, 3, start, e);
+        
     }
 
     @Test
@@ -69,6 +70,18 @@ public class AStarTest {
 
         astar = new AStar(solvable);
         assertTrue(astar.solve().size() == 5);
+    }
+    
+    @Test
+    public void getMaxSizeQueueWorks() {
+        astar = new AStar(unsolvableMaze);
+        assertTrue(astar.getMaxSize() == -1);
+    }
+    
+     @Test
+    public void getVisitedWorks() {
+        astar = new AStar(unsolvableMaze);
+        assertTrue(astar.getVisited() == -1);
     }
 
 }

@@ -6,6 +6,7 @@ import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.dataStructures.Coordinate;
 import lyhyinreitti.dataStructures.Maze;
 import lyhyinreitti.dataStructures.Vector;
+import lyhyinreitti.performance.PerformanceTest;
 
 public class Ui {
 
@@ -79,7 +80,7 @@ public class Ui {
         String choice = reader.next();
         if (choice.equals("A")) {
             AStar astar = new AStar(maze);
-            Vector<Coordinate> cs = astar.solve();
+            Vector cs = astar.solve();
             try {
                 System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
                 print(cs.size(), cs.getList());
@@ -88,7 +89,7 @@ public class Ui {
             }
         } else if (choice.equals("B")) {
             BreadthFirstSearch bfs = new BreadthFirstSearch(maze);
-            Vector<Coordinate> cs = bfs.solve();
+            Vector cs = bfs.solve();
             try {
                 System.out.println("\nLyhyimmän reitin siirtymien määrä on " + (cs.size() - 1));
                 print(cs.size(), cs.getList());
@@ -100,7 +101,23 @@ public class Ui {
                     + "suljetaan");
             System.exit(0);
         }
-
+        
+        System.out.println("\nSuoritetaanko suorituskyky testaus? 'K' "
+                + "tarkoittaa kyllä");
+        String c = reader.next();
+        if (c.equals("K")) {
+            PerformanceTest pt = new PerformanceTest();
+            pt.sameMazeTime();
+            pt.differentMazeTime();
+            pt.generateTime();
+            pt.maximSizeOfQueue();
+            pt.visitedCells();
+            System.exit(0);
+        }  else {
+            System.out.println("\nOhjelma "
+                    + "suljetaan");
+            System.exit(0);
+        }
     }
 
     private static int wrongInputException(Scanner reader) {

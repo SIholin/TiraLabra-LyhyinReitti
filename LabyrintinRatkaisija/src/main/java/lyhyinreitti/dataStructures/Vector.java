@@ -2,9 +2,8 @@ package lyhyinreitti.dataStructures;
 
 /**
  * Own version of ArrayList and ArrayDeque
- * @param <C>
  */
-public class Vector<C> {
+public class Vector {
 
     private Coordinate[] list;
     private int last;

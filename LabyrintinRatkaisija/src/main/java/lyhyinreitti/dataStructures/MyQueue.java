@@ -3,9 +3,8 @@ package lyhyinreitti.dataStructures;
 /**
  * 
  * Own version of PriorityQueue class.
- * @param <C>
  */
-public class MyQueue<C> {
+public class MyQueue {
 
     private Estimate[] queue;
     private int last;
@@ -73,7 +72,7 @@ public class MyQueue<C> {
         return e;
     }
 
-    public int getLast() {
+    public int size() {
         return last;
     }
     

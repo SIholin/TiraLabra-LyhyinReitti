@@ -60,4 +60,16 @@ public class BFSTest {
         bfs = new BreadthFirstSearch(unsolvableMaze);
         assertNull(bfs.solve());
     }
+
+    @Test
+    public void getMaxSizeQueueWorks() {
+        bfs = new BreadthFirstSearch(unsolvableMaze);
+        assertTrue(bfs.getMaxSize() == -1);
+    }
+
+    @Test
+    public void getVisitsWorks() {
+        bfs = new BreadthFirstSearch(unsolvableMaze);
+        assertTrue(bfs.getVisits() == -1);
+    }
 }

@@ -35,7 +35,8 @@ public class BreadthFirstSearch extends Algorithm{
      *
      * @return true if it is possible solve the maze and false if not.
      */
-    public Vector<Coordinate> solve() {
+    @Override
+    public Vector solve() {
 
         int i = 0;
         int j = 0;
@@ -48,7 +49,7 @@ public class BreadthFirstSearch extends Algorithm{
 
         Coordinate[][] visited = new Coordinate[maze.height][maze.width];
 
-        Vector<Coordinate> q = new Vector<>(16);
+        Vector q = new Vector(16);
         maxSize = 1;
         visits = 1;
 
@@ -94,7 +95,7 @@ public class BreadthFirstSearch extends Algorithm{
 
         Coordinate current = visited[maze.end.y][maze.end.x],
                 start = maze.start;
-        Vector<Coordinate> inversePath = new Vector(10);
+        Vector inversePath = new Vector(10);
         inversePath.add(maze.end);
         while (!current.equals(start)) {
             inversePath.add(current);

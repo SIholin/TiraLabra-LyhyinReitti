@@ -24,7 +24,7 @@ public class MyQueueTest {
         this.myQueue.add(second);
         this.myQueue.add(third);
         
-        assertTrue(this.myQueue.getLast() == 3);
+        assertTrue(this.myQueue.size() == 3);
     }
     
     @Test

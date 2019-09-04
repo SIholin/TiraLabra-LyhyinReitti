@@ -32,7 +32,8 @@ public class AStar extends Algorithm {
      * @return the path which contains those coordinates which are in the
      * shortest path or null if it is not possible to solve.
      */
-    public Vector<Coordinate> solve() {
+    @Override
+    public Vector solve() {
 
         if (maze.graph[maze.start.y][maze.start.x] == 0
                 || maze.graph[maze.end.y][maze.end.x] == 0) {
@@ -40,12 +41,12 @@ public class AStar extends Algorithm {
         }
 
         Coordinate[][] paths = new Coordinate[maze.height][maze.width];
-        MyQueue<Estimate> queue = new MyQueue(15);
+        MyQueue queue = new MyQueue(15);
         queue.add(new Estimate(maze.start, maze.start.distance(maze.end)));
         maxSize = 1;
         visited = 1;
 
-        while (queue.getLast() > 0) {
+        while (queue.size() > 0) {
             Coordinate pos = queue.poll().coordinate;
 
             if (pos.equals(maze.end)) {
@@ -96,7 +97,7 @@ public class AStar extends Algorithm {
                 }
             }
 
-            int i = queue.getLast();
+            int i = queue.size();
             if (i > maxSize) {
                 maxSize = i;
             }
@@ -108,7 +109,7 @@ public class AStar extends Algorithm {
 
         Coordinate current = paths[maze.end.y][maze.end.x],
                 start = maze.start;
-        Vector<Coordinate> inversePath = new Vector(10);
+        Vector inversePath = new Vector(10);
         inversePath.add(maze.end);
         while (!current.equals(start)) {
             inversePath.add(current);
