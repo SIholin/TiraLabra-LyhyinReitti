@@ -16,11 +16,11 @@ Tapauksesta riippumatta luodaan lähtökoordinaatti eli taulukon vasempi ylänur
 
 Tämän jälkeen käyttäjä valitsee ratkaistaanko kyseinen labyrintti leveyssuuntaisellahaulla vai A* algoritmilla. Riippuen käyttäjän valinnasta alustetaan joko AStar luokka tai BreadthFirstSearch luokka. Labyrintti ratkaistaan ja kerrotaan käyttäjälle onko mahdollista päästä lähdöstä maaliin vai ei. Jos maaliin on mahdollista päästä käyttäjälle annetaan vaadittujen siirtojen määrä lähdöstä maaliin sekä käytetyn polun koordinaatit. 
 
+Lopuksi käyttäjä valitsee haluaako suorittaa suorituskyky testauksen. Jos käyttäjä valitsee suorituskykytestuaksen niin PerformanceTest luokka alustetaan ja sitten suoritetaan testuksen suorittavat metodit. Jos taas käyttäjä ei valitse suorituskyky testausta ohjelma suljetaan.
 
 ## Saavutetut aika- ja tilavaativuudet
 
 Levyessuuntainenhaku ja A* algoritmeillä sekä labyrintin generoinnilla on kaikilla aikavaativuutenaan O(n), missä n on solmujen lukumäärä. Ohjelman tilavaativuus on myös O(n). 
-
 
 ## Suorituskyky- ja O-analyysivertaiu
 
