@@ -1,13 +1,8 @@
-package lyhyinreitti.tests;
+package lyhyinreitti.tests.algorithms;
 
-import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.algorithms.BreadthFirstSearch;
 import lyhyinreitti.dataStructures.Coordinate;
 import lyhyinreitti.dataStructures.Maze;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

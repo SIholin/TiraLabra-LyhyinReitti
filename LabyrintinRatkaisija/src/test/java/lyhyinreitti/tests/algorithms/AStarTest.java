@@ -1,4 +1,4 @@
-package lyhyinreitti.tests.algortihms;
+package lyhyinreitti.tests.algorithms;
 
 import lyhyinreitti.algorithms.AStar;
 import lyhyinreitti.dataStructures.Coordinate;

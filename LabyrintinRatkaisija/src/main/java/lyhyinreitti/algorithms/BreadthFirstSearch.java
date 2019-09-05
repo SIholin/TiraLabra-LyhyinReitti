@@ -54,10 +54,8 @@ public class BreadthFirstSearch extends Algorithm{
         visits = 1;
 
         Coordinate c = new Coordinate(j, i);
-        c.setDistance(0);
+      
         q.add(c);
-
-        int minDist = Integer.MAX_VALUE;
 
         while (true) {
             Coordinate coordinate = q.poll();
@@ -66,10 +64,9 @@ public class BreadthFirstSearch extends Algorithm{
             }
             i = coordinate.x;
             j = coordinate.y;
-            int dist = coordinate.dist;
+            
 
             if (i == x && j == y) {
-                minDist = dist;
                 break;
             }
 
@@ -78,7 +75,6 @@ public class BreadthFirstSearch extends Algorithm{
                     visits ++;
                     visited[j + row[k]][i + col[k]] = coordinate;
                     Coordinate co = new Coordinate(j + row[k], i + col[k]);
-                    co.setDistance(dist + 1);
                     q.add(co);
 
                 }

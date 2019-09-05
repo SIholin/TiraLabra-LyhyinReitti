@@ -6,12 +6,12 @@ package lyhyinreitti.dataStructures;
 public class Coordinate {
     
     public final int x, y;
-    public int dist;
+  
     
     public Coordinate(int y, int x) {
         this.x = x;
         this.y = y;
-        this.dist = -1;
+      
     }
     
     /**
@@ -21,9 +21,7 @@ public class Coordinate {
         return new Coordinate(y, x -1);
     }
     
-    public void setDistance(int dist) {
-        this.dist = dist;
-    }
+    
     /**
     * Returns the coordinate that is right side of the current coordinate.
     */

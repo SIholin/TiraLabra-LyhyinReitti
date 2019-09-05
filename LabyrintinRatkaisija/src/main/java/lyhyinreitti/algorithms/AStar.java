@@ -116,7 +116,7 @@ public class AStar extends Algorithm {
             current = paths[current.y][current.x];
         }
         inversePath.add(start);
-        return inversePath; // todo reverse
+        return inversePath; 
     }
 
     public int getMaxSize() {

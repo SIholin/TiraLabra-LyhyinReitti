@@ -1,11 +1,6 @@
 package lyhyinreitti.tests.dataStructures;
 
 import lyhyinreitti.dataStructures.Coordinate;
-import lyhyinreitti.dataStructures.Coordinate;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -85,12 +80,6 @@ public class CoordinateTest {
     public void returnsLeft(){
         Coordinate left = new Coordinate(1, 1);
         assertTrue(coordinate.left().equals(left));
-    }
-    
-    @Test
-    public void setDistanceWorks() {
-        coordinate.setDistance(4);
-        assertTrue(coordinate.dist == 4);
     }
 
 }
