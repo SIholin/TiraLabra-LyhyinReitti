@@ -2,7 +2,7 @@
 
 ## Tiedoston suorittaminen
 
-Sovelluksen saa käynnistettyä kloonaamalla sen githubista tietokoneelle. Alla on terminaalissa käytettävät komennot sovelluksen lataamiseen githubista ja käynnistämiseen. Sovelluksen voi käynnistää myös lataamalla [jar tiedoston]() haluamaansa kansioon ja tekemällä kyseisessä kansiossa komennon **java -jar tiralabra-LyhyinReitti.jar**.
+Sovelluksen saa käynnistettyä kloonaamalla sen githubista tietokoneelle. Alla on terminaalissa käytettävät komennot sovelluksen lataamiseen githubista ja käynnistämiseen. Sovelluksen voi käynnistää myös lataamalla jar tiedoston, joka löytyy releasen alta, haluamaansa kansioon ja tekemällä kyseisessä kansiossa komennon **java -jar tiralabra-LyhyinReitti.jar**.
 
 ```
 git clone git@github.com:SIholin/tiralabra-Labyrintti.git
