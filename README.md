@@ -12,6 +12,8 @@ Labyrintti koostuu 0 ja 1 merkeistä. 0 tarkoittaa seinää ja 1 mahdollista kul
 
 [Toteutusdokumentti](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Toteutusdokumentti.md)
 
+[Javadoc](https://github.com/SIholin/tiralabra-Labyrintti/tree/master/documentation/javadocs)
+
 
 **Viikkoraportit**
 - [Viikkoraportti 1](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Viikkoraportit/viikkoraportti1.md) 
