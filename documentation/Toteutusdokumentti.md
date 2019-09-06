@@ -38,4 +38,4 @@ Suorituksen aikaisten solmuvierailuiden määrässä on kuitenkin suuri ero A* j
 
 ## Työn puutteet ja parannusehdotukset
 
-Labyrintin generointi algoritmi ei ole paras mahdollinen, mutta se toimii. Myös Random luokassa on suuria puutteita, mutta se tuntuu toimivan tähän tarkoitukseen tarpeeksi hyvin. A* algortimi vierailee liian monessa eri solmussa suorituksensa aikana, joten se on selkeä puute. Käyttöliittymä olisi myös parantelua vailla.
+Labyrintin generointi algoritmi ei ole paras mahdollinen, mutta se toimii. Myös Random luokassa on suuria puutteita, mutta se tuntuu toimivan tähän tarkoitukseen tarpeeksi hyvin. A* algortimi vierailee liian monessa eri solmussa suorituksensa aikana, joten se on selkeä puute, jota pitäisi parantaa. Käyttöliittymä olisi myös parantelua vailla.
