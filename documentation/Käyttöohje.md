@@ -2,7 +2,7 @@
 
 ## Tiedoston suorittaminen
 
-Sovelluksen saa käynnistettyä kloonaamalla sen githubista tietokoneelle. Alla on terminaalissa käytettävät komennot sovelluksen lataamiseen githubista ja käynnistämiseen. 
+Sovelluksen saa käynnistettyä kloonaamalla sen githubista tietokoneelle. Alla on terminaalissa käytettävät komennot sovelluksen lataamiseen githubista ja käynnistämiseen. Sovelluksen voi käynnistää myös lataamalla [jar tiedoston]() haluamaansa kansioon ja tekemällä kyseisessä kansiossa komennon **java -jar tiralabra-LyhyinReitti.jar**.
 
 ```
 git clone git@github.com:SIholin/tiralabra-Labyrintti.git
@@ -21,3 +21,5 @@ sisällä olevien seinien "0" ja mahdollisten kulkureittien "1" järejestäytmis
 Tämän jälkeen labyrintti tulostetaan käyttäjän näkyviin, jonka jälkeen käyttäjältä kysytään ratkaistaanko labyrintti leveyssuuntaisellahaulla vai A* algoritmilla. "A" tarkoittaa A* ja "B" tarkoittaa leveyssuuntaistahakua. Jos käyttäjä syöttää jotain muuta käyttäjälle ilmoitetaan virheestä ja ohjelma suljetaan.
 
 Sen jälkeen ohjelma kertoo käyttäjälle onko labyrinttiä mahdollista ratkaista vai onko se mahdoton. Jos labyrintti on mahdollinen käyttäjälle kerrotaan myös vaadittujen siirtymien määrä alusta loppuun sekä polun koordinaatit, jota pitkin alusta loppuun pääsee.
+
+Lopuksi käyttäjän on mahdollista valita suoritetaanko suorituskyky testaus, jos sen tahtoo suorittaa tulee ohjelmalle antaa "K". Tämän jälkeen ohjelma suorittaa suorituskykytestauksen, josta voi tarkemmin lukea [täältä](https://github.com/SIholin/tiralabra-Labyrintti/blob/master/documentation/Testaus.md). Ohjelman annettua käyttäjälle suorituskyky testuaksen tulokset, se sulkeutuu itsestään.
